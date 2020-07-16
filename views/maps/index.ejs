@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../maps/partials/head') %>
+    <title><%= type %> | FNBR HUB</title>
+    <link rel="stylesheet" href="/assets/css/index.css">
+</head>
+<body>
+    <%- include('../maps/partials/header') %>
+
+    <section id="announcement">
+        <div class="container">
+            <a class="link-wrapper">
+                <div class="announcement">
+
+                </div>
+            </a>    
+        </div>
+    </section>
+
+    <section id="search">
+        <div class="container">
+            <div class="search-bg">
+                <div class="img-wrapper">
+                    <div class="flex">
+                        <div class="search-bar">
+                            <h1 class="title">Search over 3,456 Maps</h1>
+                            <form action="" method="POST">
+                                <input type="text" name="search" id="search" placeholder="Search">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="maps">
+        <div class="container">
+            <div class="grid">
+                <div class="sidebar">
+                    <div class="sidebar-wrapper">
+                        <h1>Featured Maps</h1>
+                        <div class="featured-map">
+                            <div class="featured-img"></div>
+                            <div class="map-title">Featured Map</div>
+                        </div>
+                        <div class="featured-map">
+                            <div class="featured-img"></div>
+                            <div class="map-title">Featured Map</div>
+                        </div>
+                        <div class="featured-map">
+                            <div class="featured-img"></div>
+                            <div class="map-title">Featured Map</div>
+                        </div>
+                        <div class="featured-map">
+                            <div class="featured-img"></div>
+                            <div class="map-title">Featured Map</div>
+                        </div>
+                        <div class="featured-map">
+                            <div class="featured-img"></div>
+                            <div class="map-title">Featured Map</div>
+                        </div>
+                    </div>                    
+                </div>
+                <div class="maps">
+                    <h1 class="title"><%= type %></h1>
+                    <div class="map-grid">
+                        <% for(var i=0;i<20;i++) { %>
+                        <div class="map-item">
+                            <a href="" class="link-wrapper">
+                                <div class="item-wrapper">
+                                    <img src="/images/4692-4928-5967.jpg">
+                                    <h1>Forbidden City</h1>
+                                    <h5>By: ShrideFN</h5>
+                                </div>
+                            </a>
+                        </div>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+<script>
+    
+</script>

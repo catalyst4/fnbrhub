@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../maps/partials/head') %>
+    <title><%= mapCode %> | FNBR HUB</title>
+    <link rel="stylesheet" href="/assets/css/map.css">
+</head>
+<body>
+    <%- include('../maps/partials/header') %>
+
+    <section id="map">
+        <div class="container">
+            <div class="flex">
+                <div class="images">
+                    <div class="main-img">
+                        <img src="/images/4692-4928-5967.jpg">    
+                    </div>
+                    <div class="sub-imgs">
+                        <img src="/images/4692-4928-5967.jpg" width="200">
+                        <img src="/images/4692-4928-5967.jpg" width="200">
+                        <img src="/images/4692-4928-5967.jpg" width="200">
+                    </div>
+                    
+                </div>
+                <div class="info">
+                    <div class="info-panel">
+                        <h1 class="title">Shride Shit Map Remake</h1>
+                        <h5>By ShrideFN</h5>
+                        <a class="type-btn">Remake</a>
+                        <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae facilis quas consectetur ab, rerum sed nisi? Enim doloribus explicabo omnis obcaecati quam libero, dolore recusandae, ab et, repudiandae possimus facilis!</p>
+                        <div class="code-btn" id="code-btn" onclick="myFunction()">0881-2619-9153</div>
+                    </div>
+                    <div class="creator-panel">
+                        <div class="header">
+                            <img src="/assets/img/user_Shride.jpg" width="50">
+                            <h1>ShrideFN</h1>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, magni!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="similar">
+        <div class="container">
+            <div class="similar-maps">
+                <h1>Similar Maps</h1>
+                <div class="flex">
+                    <div class="map-item">
+                        <img src="/images/4692-4928-5967.jpg" width="350">
+                        <h1 class="map-title">Similar Map</h1>
+                    </div>
+                    <div class="map-item">
+                        <img src="/images/4692-4928-5967.jpg" width="350">
+                        <h1 class="map-title">Similar Map</h1>
+                    </div>
+                    <div class="map-item">
+                        <img src="/images/4692-4928-5967.jpg" width="350">
+                        <h1 class="map-title">Similar Map</h1>
+                    </div>
+                    <div class="map-item">
+                        <img src="/images/4692-4928-5967.jpg" width="350">
+                        <h1 class="map-title">Similar Map</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
+<script>
+
+    myFunction = () => {
+        const copyText = document.getElementById("code-btn");
+        copyText.select();
+        copyText.setSelectionRange(0,99999);
+
+        document.execCommand("copy");
+    }
+
+</script>
