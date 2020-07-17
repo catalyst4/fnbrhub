@@ -72,3 +72,18 @@
     font-size: 16px;
     margin-right: 10px;
 }
+
+@media (min-width: 768px) and (max-width: 991px){
+
+    .nav-links {
+        display: none;
+    }
+
+    .logo {
+        font-size: 36px;
+    }
+
+    .menu a {
+        font-size: 36px;
+    }
+}
