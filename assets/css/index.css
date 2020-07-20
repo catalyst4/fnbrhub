@@ -8,6 +8,67 @@
     margin: 15px 0 30px 0;
 }
 
+/* SEARCH BAR */
+
+.search {
+    margin-bottom: 15px;
+}
+
+.search .input-field {
+    width: 100%;
+    padding: 10px 15px 10px 15px;
+    border-radius: 8px;
+    background: #252525;
+    box-sizing: border-box;
+}
+
+.input-field i {
+    margin-right: 5px;
+    color: grey;
+}
+
+.search input {
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: white;
+}
+
+/* FEATURED MAPS SECTION */
+
+.featured-maps {
+    margin-bottom: 15px;
+}
+
+.featured {
+    width: 100%;
+    background: #252525;
+    padding: 25px;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.flex-featured {
+    display: flex;
+    justify-content: space-between;
+}
+
+.featured-map {
+    width: 32%;
+    border-radius: 15px;
+}
+
+.featured-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.featured-map img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 15px;
+}
+
 /* MAPS SECTION */
 .grid {
     display: grid;
@@ -20,6 +81,9 @@
 }
 
 .title {
+    font-family: "Burbank Big Condensed";
+    transform: skew(-10deg);
+    font-size: 48px;
     margin-bottom: 15px;
 }
 
@@ -28,116 +92,20 @@
     height: 100%;
 }
 
-img {
+.maps img {
     max-width: 100%;
     max-height: 100%;
-    border-radius: 25px;
+    border-radius: 10px;
 }
 
-.map-item h1 {
-    margin: 5px 0 0 0;
+.map-item h1, .featured-maps h1 {
+    font-family: "Burbank Big Condensed";
+    transform: skew(-10deg);
+    font-size: 36px;
 }
 
 .map-item h5 {
     opacity: 0.9;
-}
-
-.sidebar {
-    display: none;
-    grid-area: sidebar;
-    width: 350px;
-    height: min-content;
-    background: #151515;
-    border-radius: 15px;
-    position: sticky;
-}
-
-.sidebar-wrapper {
-    padding: 15px;
-}
-
-.sidebar-wrapper h1 {
-    margin: 20px 0 20px 0;
-    text-align: center;
-}
-
-.featured-map {
-    width: 100%;
-    height: 150px;
-    background: #202020;
-    border-radius: 10px;
-    margin-bottom: 35px;
-    position: relative;
-}
-
-.featured-img {
-    background: url('/images/4692-4928-5967.jpg');
-    background-position: center;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-}
-
-.map-title {
-    width: 90%;
-    background: #252525;
-    bottom: 0;
-    padding: 10px 5px 10px 5px;
-    margin-bottom: -20px;
-    margin-left: 10px;
-    position: absolute;
-    border-radius: 5px;
-    text-align: center;
-}
-
-.flex {
-    display: flex;
-    justify-content: center;
-}
-
-.search-bg {
-    width: 100%;
-    margin: 15px 0 20px 0;
-    background: url('/assets/img/fortnite-chapter-2-season-3-2000x1125-242707903.jpg');
-    background-size: cover;
-    background-position-y: 10%;
-    border-radius: 25px;
-}
-
-.search-bg .img-wrapper {
-    width: 100%;
-    height: 100%;
-    padding: 10px;
-    background: rgba(0, 0, 0,0.75);
-    border-radius: 25px;
-}
-
-.search-bar {
-    width: 90%;
-    margin: 50px 0 50px 0;
-}
-
-.search-bar form {
-    background: white;
-    border-radius: 25px;
-}
-
-.search-bar input {
-    width: 500px;
-    background: none;
-    border: none;
-    font-size: 36px;
-    padding: 15px 20px 15px 25px;
-}
-
-.search-bar button {
-    background: blue;
-    border: none;
-}
-
-.search-bar .title {
-    text-align: center;
 }
 
 @media (max-width: 767px){
@@ -147,10 +115,6 @@ img {
 }
 
 @media (min-width: 768px) and (max-width: 991px){
-    .sidebar {
-        display: none;
-    }
-
     .map-item h1 {
         font-size: 48px;
     }
@@ -162,6 +126,14 @@ img {
 
     .title {
         font-size: 48px;
+    }
+
+    .search-bar input {
+        font-size: 36px;
+    }
+
+    .search-bar .title {
+        text-align: center;
     }
 }
 
@@ -176,12 +148,17 @@ img {
 
     .map-grid {
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: auto auto auto;
         gap: 15px;
     }
 
     .map-item h5 {
         font-size: 16px;
         margin-bottom: 20px;
+    }
+
+    .search-bar .title {
+        font-size: 48px;
+        text-align: center;
     }
 }

@@ -1,0 +1,82 @@
+.table-bg {
+    background: #303030;
+    border-radius: 5px;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-spacing: 0px;
+}
+
+thead {
+    background: #252525;
+    text-align: left;
+    color: white;
+}
+
+th {
+    padding: 20px 15px 20px 15px;
+    border-bottom: 1px solid black;
+}
+
+td {
+    padding: 20px;
+    background: none;
+    color: white;
+    border-bottom: 1px solid black;
+}
+
+tr:last-child td{
+    border-bottom: none!important;
+}
+
+td a {
+    padding: 5px 15px 5px 15px;
+    color: rgba(0, 0, 0,0.45);
+    font-weight: bold;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.actions {
+    width: 375px;
+}
+
+td a i {
+    margin-right: 5px;
+}
+
+td .view {
+    background: #d3d3d3;
+}
+
+td .edit {
+    background: #3BB9EE;
+}
+
+td .edit:hover {
+    background: rgba(59, 185, 238,0.9);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+td .remove {
+    background: #ff6666;
+}
+
+td .remove:hover {
+    background: rgba(255, 102, 102,0.9);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+td .approve {
+    background: #77dd77;
+}
+
+td .approve:hover {
+    background: rgb(119, 221, 119,0.9);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}

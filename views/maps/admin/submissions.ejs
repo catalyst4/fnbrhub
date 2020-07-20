@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+    <title>Admin | FNBR HUB</title>
+    <link rel="stylesheet" href="/assets/css/admin/admin.css">
+    <link rel="stylesheet" href="/assets/css/admin/maps.css">
+</head>
+<body>
+
+    <%- include('../partials/modals') %>
+    
+    <div class="admin-header">
+        <div class="container">
+            <div class="header-container">
+                <div class="heading blue">
+                    <div class="heading-inner">
+                        <h1>FNBR Panel</h1>
+                    </div>
+                </div>
+                <div class="nav-links">
+                    <a href="/maps/admin"><i class="fas fa-home"></i></a>
+                    <a onclick="openAddModal()"><i class="fas fa-plus"></i> Add Map</a>
+                    <a href="/maps/admin/maps"><i class="fas fa-images"></i> Maps</a>
+                    <a href="/maps/admin/submissions"><i class="fas fa-stream"></i> Map Submissions</a>
+                    <a href="/maps/admin/featured"><i class="fas fa-landmark"></i> Featured Maps</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="table">
+        <div class="container">
+            <div class="table-bg">
+            <table>
+                <colgroup>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col class="actions">
+                </colgroup>
+                <thead>
+                  <tr>
+                      <th>Map Name</th>
+                      <th>Map Code</th>
+                      <th>Map Type</th>
+                      <th>Creator</th>
+                      <th>Actions</th>
+                  </tr>
+                </thead>
+        
+                <tbody>
+                <% for(var i=0;i<20;i++) { %>
+                  <tr>
+                    <td>Forbidden City</td>
+                    <td>3939-4521-4354</td>
+                    <td>Deathrun</td>
+                    <td>Shride FN</td>
+                    <td>
+                        <a class="edit" onclick="openEditModal()"><i class="fas fa-edit"></i> Edit</a>
+                        <a class="approve" onclick="openApproveModal()"><i class="fas fa-check"></i> Approve</a>
+                        <a class="remove" onclick="openDenyModal()"><i class="fas fa-times"></i> Deny</a>
+                    </td>
+                  </tr>
+                <% } %>
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="/assets/js/modal.js"></script>

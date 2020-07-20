@@ -3,13 +3,13 @@
 }
 
 .main-nav {
-    background: #121212;
-    padding: 20px 0 20px 0;
+    padding: 30px 0 30px 0;
 }
 
 .main-nav .flex {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
@@ -19,15 +19,25 @@
 .nav-link {
     margin-left: 20px;
     font-size: 18px;
-    color: rgba(255, 255, 255,0.5);
+    color: rgba(255, 255, 255,0.6);
+}
+
+.nav-link:hover {
+    color: rgba(255, 255, 255,0.75);
+    transition: all 0.2s ease-in-out;
 }
 
 .nav-btn {
     padding: 10px 20px 10px 20px;
-    background: white;
-    border-radius: 20px;
-    color: black;
+    background: rgba(0, 0, 0,0.2);
+    border-radius: 5px;
+    color: white!important;
     font-size: 18px;
+}
+
+.nav-btn:hover {
+    background: rgba(0, 0, 0,0.25);
+    transition: all 0.2s ease-in-out;
 }
 
 .nav-btn span {
@@ -36,32 +46,34 @@
 }
 
 .type-nav {
-    padding: 10px 0 10px 0;
-    border-top: 1px solid #4b4b4b;
-    border-bottom: 1px solid #4b4b4b;
+    padding: 15px 0 15px 0;
 }
 
 .type-nav .flex{
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-around;
 }
 
 .map-type {
-    background: #202020;
+    background: none;
+    color: white;
     padding: 8px 20px 8px 20px; 
-    border-radius: 20px;
+    border-radius: 25px;
     font-size: 14px;
     margin-right: 10px;
-    border: 1px solid #4b4b4b;
+    border: 1px solid white;
 }
 
 .map-type:hover {
-    background: #303030;
-    transition: ease-in-out 0.1s;
+    background: white;
+    color: black;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid white;
 }
 
 .active {
     color: white!important;
+    font-weight: bold;
 }
 
 .active-type {
@@ -69,8 +81,32 @@
     color: black;
     padding: 8px 20px 8px 20px; 
     border-radius: 20px;
-    font-size: 16px;
+    font-size: 14px;
     margin-right: 10px;
+    border: 1px solid white;
+}
+
+.menu {
+    display: none;
+}
+
+.mobile-nav {
+    display: none;
+    width: 100%;
+    background: #151515;
+}
+
+.mobile-nav a {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 36px;
+}
+
+.mobile-nav a:hover {
+    background: black;
 }
 
 @media (min-width: 768px) and (max-width: 991px){
@@ -83,7 +119,11 @@
         font-size: 36px;
     }
 
-    .menu a {
+    .menu {
+        display: block;
+    }
+
+    .menu i {
         font-size: 36px;
     }
 }

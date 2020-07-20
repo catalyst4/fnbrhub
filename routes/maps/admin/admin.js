@@ -3,7 +3,7 @@ const router = express();
 
 router.get('/maps/admin', (req,res) => {
 
-    res.render('/admin/admin')
+    res.render('maps/admin/admin')
 
 });
 

@@ -1,8 +1,10 @@
 <div class="header">
-    <div class="main-nav">
+    <div class="main-nav primary">
         <div class="container">
             <div class="flex">
-                <div class="logo">FNBR MAPS</div>
+                <div class="logo">
+                    <img src="/assets/img/logo.png" width="130">
+                </div>
                 <div class="nav-links">
                     <a href="/" id="home" class="nav-link">Home</a>
                     <a href="/maps/newest" id="newest" class="nav-link">Newest</a>
@@ -16,16 +18,50 @@
                         Submit Map
                     </a>
                 </div>
-                <div class="menu">
-                    <a href=""><i class="fas fa-bars"></i></a>
+                <div onclick="openNav()" class="menu">
+                    <i class="fas fa-bars"></i>
                 </div>
             </div>
         </div>
     </div>
     <div class="type-nav">
+        <div class="flex">
+            <a href="/maps/deathrun" id="deathrun" class="map-type">Deathrun</a>
+            <a href="/maps/zone-wars" id="zone-wars" class="map-type">Zone Wars</a>
+            <a href="/maps/escape" id="escape" class="map-type">Escape</a>
+            <a href="/maps/prop-hunt" id="prop-hunt" class="map-type">Prop Hunt</a>
+            <a href="/maps/box-fights" id="box-fights" class="map-type">Box Fights</a>
+            <a href="/maps/training" id="training" class="map-type">Training</a>
+            <a href="/maps/remake" id="remake" class="map-type">Remake</a>
+            <a href="/maps/adventure" id="adventure" class="map-type">Adventure</a>
+            <a href="/maps/gun-game" id="gun-game" class="map-type">Gun Game</a>
+            <a href="/maps/parkour" id="parkour" class="map-type">Parkour</a>
+            <a href="/maps/1v1" id="onevone" class="map-type">1v1</a>
+            <a href="/maps/races" id="races" class="map-type">Races</a>
+            <a href="/maps/horror" id="horror" class="map-type">Horror</a>
+            <a href="/maps/music" id="music" class="map-type">Music</a>
+            <a href="/maps/fashion-show" id="fashion-show" class="map-type">Fashion Show</a>
+            <a href="/maps/hide-and-seek" id="hide-and-seek" class="map-type">Hide and Seek</a>
+            <a href="/maps/ffa" id="ffa" class="map-type">FFA</a>    
+            <a href="/maps/mazes" id="mazes" class="map-type">Mazes</a>    
+            <a href="/maps/" id="deathrun" class="map-type">Deathrun</a>    
+            <a href="/maps/" id="deathrun" class="map-type">Deathrun</a>    
+            <a href="/maps/" id="deathrun" class="map-type">Deathrun</a>    
+            <a href="/maps/" id="deathrun" class="map-type">Deathrun</a>    
+            <a href="/maps/" id="deathrun" class="map-type">Deathrun</a>    
+        </div>
+    </div>
 
+    <div id="mobile-nav" class="mobile-nav">
+        <a href="">Home</a>
+        <a href="">Newest</a>
+        <a href="">Popular</a>
+        <a href="">Featured</a>
+        <a href="">Random</a>
+        <a href="">Submit Map</a>
     </div>
 </div>
+<script src="/assets/js/nav.js"></script>
 <script>
     $(document).ready(function() {
         const home = document.getElementById('home');
@@ -46,6 +82,10 @@
         const parkour = document.getElementById('parkour');
         const onevone = document.getElementById('1v1');
         const races = document.getElementById('races');
+        const horror = document.getElementById('horror');
+        const music = document.getElementById('music');
+        const fashionshow = document.getElementById('fashion-show');
+        const hideandseek = document.getElementById('hide-and-seek');
 
         const url = window.location.href;
         if(url.includes('/maps/newest')) {
@@ -92,6 +132,18 @@
         } else if(url.includes('/maps/races')) {
             races.classList.remove('map-type');
             races.classList.add('active-type');
+        } else if(url.includes('/maps/horror')) {
+            horror.classList.remove('map-type');
+            horror.classList.add('active-type');
+        } else if(url.includes('/maps/music')) {
+            music.classList.remove('map-type');
+            music.classList.add('active-type');
+        } else if(url.includes('/maps/fashion-show')) {
+            fashionshow.classList.remove('map-type');
+            fashionshow.classList.add('active-type');
+        } else if(url.includes('/maps/hide-and-seek')) {
+            hideandseek.classList.remove('map-type');
+            hideandseek.classList.add('active-type');
         } else {
             home.classList.add('active');
         }

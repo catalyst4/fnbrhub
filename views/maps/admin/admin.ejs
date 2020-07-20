@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+    <title>Admin | FNBR HUB</title>
+    <link rel="stylesheet" href="/assets/css/admin/admin.css">
+</head>
+<body>
+    
+    <div class="admin-header">
+        <div class="container">
+            <div class="header-container">
+                <div class="heading blue">
+                    <div class="heading-inner">
+                        <h1>FNBR Panel</h1>
+                    </div>
+                </div>
+                <div class="nav-links">
+                    <a href="/maps/admin"><i class="fas fa-home"></i></a>
+                    <a href="/maps/admin/maps/add"><i class="fas fa-plus"></i> Add Map</a>
+                    <a href="/maps/admin/maps"><i class="fas fa-images"></i> Maps</a>
+                    <a href="/maps/admin/submissions"><i class="fas fa-stream"></i> Map Submissions</a>
+                    <a href="/maps/admin/featured"><i class="fas fa-landmark"></i> Featured Maps</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="cards">
+        <div class="container">
+            <div class="flex-card">
+                <div class="card">
+                    <a href="/maps/admin/maps">
+                        <div class="card-wrapper primary primary-glow">
+                            <div class="card-title">
+                                <div class="icon"><i class="fas fa-images"></i></div>
+                                <div>Maps</div>
+                            </div>
+                            <div class="numbers">
+                                <h1>2,451</h1>
+                                <div><i class="fas fa-chevron-up"></i> 69</div>
+                            </div>
+                            <span>Total Maps</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="/maps/admin/submissions">
+                        <div class="card-wrapper blue blue-glow">
+                            <div class="card-title">
+                                <div class="icon"><i class="fas fa-stream"></i></div>
+                                <div>Map Submissions</div>
+                            </div>
+                            <div class="numbers">
+                                <h1>693</h1>
+                                <div><i class="fas fa-chevron-up"></i> 6</div>
+                            </div>
+                            <span>New Map Submissions</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="/maps/admin/maps">
+                        <div class="card-wrapper dark dark-glow">
+                            <div class="card-title">
+                                <div class="icon"><i class="fas fa-star"></i></div>
+                                <div>Creators</div>
+                            </div>
+                            <div class="numbers">
+                                <h1>26</h1>
+                                <div><i class="fas fa-chevron-up"></i> 3</div>
+                            </div>
+                            <span>Total Creators</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="/maps/admin/maps">
+                        <div class="card-wrapper light light-glow">
+                            <div class="card-title">
+                                <div class="icon"><i class="fas fa-landmark"></i></div>
+                                <div>Featured Maps</div>
+                            </div>
+                            <div class="numbers">
+                                <h1>34,670</h1>
+                                <div><i class="fas fa-chevron-up"></i> 5,323</div>
+                            </div>
+                            <span>Total Views</span>
+                        </div>
+                    </a>
+                </div>
+            </div>    
+        </div>
+    </div>
+</body>
+</html>

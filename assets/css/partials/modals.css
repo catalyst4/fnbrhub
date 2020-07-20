@@ -1,0 +1,95 @@
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0,0.5);
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem 1.5rem;
+    width: 40rem;
+    border-radius: 0.5rem;
+    color: black;
+}
+
+.modal-content h1 {
+    font-family: "Burbank Big Condensed";
+    transform: skew(-10deg);
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.modal-content input {
+    width: 100%;
+    display: block;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+#editModal .modal-content input {
+    background: none;
+    border: 2px solid rgba(0, 0, 0,0.45);
+    color: rgba(0, 0, 0,0.45);
+}
+
+.modal-content button {
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(0, 0, 0,0.45);
+}
+
+.modal-content button:hover {
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.modal-content button i {
+    margin-right: 5px;
+}
+
+#addModal .modal-content {
+    background: white;
+}
+
+#editModal .modal-content {
+    background: #3BB9EE;
+}
+
+#approveModal .modal-content{
+    background: #77dd77;
+}
+
+#denyModal .modal-content {
+    background: #ff6666;
+}
+
+#removeModal .modal-content {
+    background: #ff6666;
+}
+
+.add, .edit, .approve, .deny, .remove {
+    background: none;
+    border: 2px solid rgba(0, 0, 0,0.45);
+}
+
+.cancel {
+    background: rgba(0, 0, 0,0.15);
+    border: 2px solid rgba(0, 0, 0,0.02);
+}
+
+.cancel:hover {
+    background: rgba(0, 0, 0,0.1);
+    border: 2px solid rgba(0, 0, 0,0.01);
+}

@@ -22,6 +22,9 @@ app.use(require('./routes/index'));
 app.use(require('./routes/maps/type'));
 app.use(require('./routes/maps/map'));
 app.use(require('./routes/maps/submit'));
+app.use(require('./routes/maps/admin/admin'));
+app.use(require('./routes/maps/admin/maps'));
+app.use(require('./routes/maps/admin/submissions'));
 
 app.get('*', (req,res) => {
     res.redirect('/maps');
