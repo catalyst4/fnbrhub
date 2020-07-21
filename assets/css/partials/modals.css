@@ -39,7 +39,11 @@
 #editModal .modal-content input {
     background: none;
     border: 2px solid rgba(0, 0, 0,0.45);
-    color: rgba(0, 0, 0,0.45);
+    color: rgba(0, 0, 0,0.7);
+}
+
+#editModal .modal-content input::placeholder {
+    color: rgba(0, 0, 0,0.7);
 }
 
 .modal-content button {

@@ -3,6 +3,9 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const path = require('path');
 const bodyParser = require('body-parser');
+const initiateMongo = require('./config/db');
+
+initiateMongo();
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname + '/views'));
