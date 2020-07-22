@@ -81,7 +81,7 @@
 }
 
 .title {
-    font-family: "Burbank Big Condensed";
+    font-family: 'Luckiest Guy', cursive;
     transform: skew(-10deg);
     font-size: 48px;
     margin-bottom: 15px;
@@ -99,7 +99,7 @@
 }
 
 .map-item h1, .featured-maps h1 {
-    font-family: "Burbank Big Condensed";
+    font-family: 'Luckiest Guy', cursive;
     transform: skew(-10deg);
     font-size: 36px;
 }
