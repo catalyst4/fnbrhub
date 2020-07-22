@@ -30,10 +30,25 @@
     width: 100%;
     display: block;
     padding: 10px;
-    margin-bottom: 15px;
     box-sizing: border-box;
     border: 1px solid grey;
     border-radius: 5px;
+}
+
+.modal-content label {
+    font-size: 12px;
+    color: grey;
+}
+
+.input-group[data-error] input {
+    border-color: red;
+    color: red;
+}
+
+.input-group[data-error]::after {
+    content: attr(data-error);
+    font-size: 12px;
+    color: red;
 }
 
 #editModal .modal-content input {
@@ -44,6 +59,16 @@
 
 #editModal .modal-content input::placeholder {
     color: rgba(0, 0, 0,0.7);
+}
+
+.input-group {
+    margin-bottom: 10px;
+}
+
+.input-group span {
+    color: red;
+    margin-left: 5px;
+    font-size: 12px;
 }
 
 .modal-content button {
@@ -63,12 +88,8 @@
     margin-right: 5px;
 }
 
-#addModal .modal-content {
+#addModal .modal-content, #editModal .modal-content {
     background: white;
-}
-
-#editModal .modal-content {
-    background: #3BB9EE;
 }
 
 #approveModal .modal-content{
@@ -96,4 +117,8 @@
 .cancel:hover {
     background: rgba(0, 0, 0,0.1);
     border: 2px solid rgba(0, 0, 0,0.01);
+}
+
+.validate {
+    border: 1px solid red!important;
 }

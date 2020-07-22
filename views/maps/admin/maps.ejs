@@ -5,11 +5,12 @@
     <title>Admin | FNBR HUB</title>
     <link rel="stylesheet" href="/assets/css/admin/admin.css">
     <link rel="stylesheet" href="/assets/css/admin/maps.css">
+    <link rel="stylesheet" href="/assets/css/admin/modals.css">
 </head>
 <body>
-
-    <%- include('../partials/modals') %>
     
+    <%- include('../partials/modals') %>
+
     <div class="admin-header">
         <div class="container">
             <div class="header-container">
@@ -31,6 +32,7 @@
 
     <div class="table">
         <div class="container">
+            <h1>Published Maps</h1>
             <div class="table-bg">
             <table>
                 <colgroup>
@@ -51,18 +53,64 @@
                 </thead>
         
                 <tbody>
-                <% for(var i=0;i<20;i++) { %>
+                <% for(var map of maps) { %>
                   <tr>
-                    <td>Forbidden City</td>
-                    <td>3939-4521-4354</td>
-                    <td>Deathrun</td>
-                    <td>Shride FN</td>
+                    <td><%= map.name %></td>
+                    <td><%= map.code %></td>
+                    <td><%= map.type %></td>
+                    <td><%= map.creator %></td>
                     <td>
-                        <a href="/maps/id/3939-4521-4354" class="view"><i class="fas fa-external-link-alt"></i> View</a>
-                        <a class="edit" onclick="openEditModal()"><i class="fas fa-edit"></i> Edit</a>
+                        <a href="/maps/id/<%= map.code %>" class="view"><i class="fas fa-external-link-alt"></i> View</a>
+                        <a class="edit editBtn" id="editBtn" data-code="<%= map.code %>"><i class="fas fa-edit"></i> Edit</a>
                         <a class="remove" onclick="openRemoveModal()"><i class="fas fa-trash"></i> Remove</a>
                     </td>
                   </tr>
+                    <div class="modal" id="editModal" data-code="<%= map.code %>">
+                        <div class="modal-content">
+                            <h1>Edit Map</h1>
+                            <form action="/maps/admin/edit" method="POST" onsubmit="return mapValidation()">
+                                <div class="input-group">
+                                    <input type="text" onkeyup="validateName()" name="name" placeholder="Map Name*" value="<%= map.name %>">
+                                </div>
+                                <div class="input-group">
+                                    <label for="code">MAP CODE</label>
+                                    <input type="text" onkeyup="validateCode()" name="code" placeholder="Map Code*" value="<%= map.code %>">    
+                                </div>
+                                <div class="input-group">
+                                    <label for="type">MAP TYPE</label>
+                                    <input type="text" onkeyup="validateType()" name="type" placeholder="Map Type*" value="<%= map.type %>">    
+                                </div>
+                                <div class="input-group">
+                                    <label for="creator">MAP CREATOR</label>
+                                    <input type="text" onkeyup="validateCreator()" name="creator" placeholder="Map Creator*" value="<%= map.creator %>">
+                                </div>
+                                <div class="input-group">
+                                    <label for="description">MAP DESCRIPTION</label>
+                                    <input type="text" onkeyup="validateDescription()" name="description" placeholder="Description" value="<%= map.description %>">
+                                </div>
+                                <div class="input-group">
+                                    <label for="youtubeLink">MAP LINK</label>
+                                    <input type="text" onkeyup="validateYoutubeLink()" name="youtubeLink" placeholder="YouTube Link" value="<%= map.youtubeLink %>">
+                                </div>
+                                <button type="submit" class="edit">
+                                    <i class="fas fa-save"></i>
+                                    Save
+                                </button>
+                                <button class="cancel" onclick="closeEditModal()">Cancel</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal" id="removeModal">
+                        <div class="modal-content">
+                            <h1>Remove Map</h1>
+                            <p>Are you sure you want to remove <%= map.name %> Map by "<%= map.creator %>"?</p>
+                            <button type="submit" class="deny">
+                                <i class="fas fa-times"></i> 
+                                Remove
+                            </button>
+                            <button class="cancel" onclick="closeRemoveModal()">Cancel</button>
+                        </div>
+                    </div>
                 <% } %>
                 </tbody>
             </table>
@@ -71,3 +119,6 @@
     </div>
 </body>
 </html>
+<script src="/assets/js/getMap.js"></script>
+<script src="/assets/js/validation.js"></script>
+<script src="/assets/js/modal.js"></script>

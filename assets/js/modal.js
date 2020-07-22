@@ -1,15 +1,25 @@
-var addModal = document.getElementById('addModal');
-var editModal = document.getElementById('editModal');
-var removeModal = document.getElementById('removeModal');
-var approveModal = document.getElementById('approveModal');
-var denyModal = document.getElementById('denyModal');
+const addModal = document.getElementById('addModal');
+const editModal = document.getElementById('editModal');
+const removeModal = document.getElementById('removeModal');
+const approveModal = document.getElementById('approveModal');
+const denyModal = document.getElementById('denyModal');
+const cancelBtn = document.getElementById('cancel');
+
+const testModal = document.getElementById('editModal');
+
+document.querySelectorAll('#editBtn').forEach(editBtn => {
+    editBtn.addEventListener('click', (e) => {
+        document.querySelectorAll('#editModal[data-code]').forEach(modal => {
+            if(editBtn.dataset.code == modal.dataset.code) {
+                modal.style.display = 'block';
+            }   
+        });
+    });
+});
+
 
 openAddModal = () => {
     addModal.style.display = 'block';
-}
-
-openEditModal = () => {
-    editModal.style.display = 'block';
 }
 
 openRemoveModal = () => {
@@ -22,6 +32,26 @@ openApproveModal = () => {
 
 openDenyModal = () => {
     denyModal.style.display = 'block';
+}
+
+closeAddModal = () => {
+    addModal.style.display = 'none';
+}
+
+closeEditModal = () => {
+    editModal.style.display = 'none';
+}
+
+closeRemoveModal = () => {
+    removeModal.style.display = 'none';
+}
+
+closeApproveModal = () => {
+    approveModal.style.display = 'none';
+}
+
+closeDenyModal = () => {
+    denyModal.style.display = 'none';
 }
 
 window.onclick = (event) => {

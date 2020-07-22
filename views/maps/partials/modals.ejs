@@ -2,50 +2,31 @@
 <div class="modal" id="addModal">
     <div class="modal-content">
         <h1>Add Map</h1>
-        <form action="">
-            <input type="text" placeholder="Map Name*">
-            <input type="text" placeholder="Map Code*">
-            <input type="text" placeholder="Map Type*">
-            <input type="text" placeholder="Map Creator*">
-            <input type="text" placeholder="YouTube Link">
+        <form action="/maps/admin/add" method="POST" name="addMap" onsubmit="return mapValidation()">
+            <div class="input-group">
+                <input type="text" onkeyup="validateName()" name="name" id="name" placeholder="Map Name*" value="<% typeof name != 'undefined' ? name : ''%>">
+            </div> 
+            <div class="input-group">
+                <input type="text" onkeyup="validateCode()" name="code" id="code" placeholder="Map Code*" value="<% typeof code != 'undefined' ? code : ''%>">
+            </div>
+            <div class="input-group">
+                <input type="text" onkeyup="validateType()" name="type" id="type" placeholder="Map Type*" value="<% typeof type != 'undefined' ? type : ''%>">
+            </div>
+            <div class="input-group">
+                <input type="text" onkeyup="validateCreator()" name="creator" id="creator" placeholder="Map Creator*" value="<% typeof creator != 'undefined' ? creator : ''%>">
+            </div>
+            <div class="input-group">
+                <input type="text" onkeyup="validateDescription()" name="description" id="description" placeholder="Description" value="<% typeof description != 'undefined' ? description : ''%>">
+            </div>
+            <div class="input-group">
+                <input type="text" onkeyup="validateYoutubeLink()" name="youtubeLink" id="youtubeLink" placeholder="YouTube Link" value="<% typeof youtubeLink != 'undefined' ? youtubeLink : ''%>">
+            </div>
             <button type="submit" class="add">
                 <i class="fas fa-plus"></i>
                 Add
             </button>
-            <button class="cancel">Cancel</button>
+            <button type="button" class="cancel" onclick="closeAddModal()">Cancel</button>
         </form>
-    </div>
-</div>
-
-<!-- EDIT -->
-<div class="modal" id="editModal">
-    <div class="modal-content">
-        <h1>Edit Map</h1>
-        <form action="">
-            <input type="text" placeholder="Map Name*">
-            <input type="text" placeholder="Map Code*">
-            <input type="text" placeholder="Map Type*">
-            <input type="text" placeholder="Map Creator*">
-            <input type="text" placeholder="YouTube Link">
-            <button type="submit" class="edit">
-                <i class="fas fa-save"></i>
-                Save
-            </button>
-            <button class="cancel">Cancel</button>
-        </form>
-    </div>
-</div>
-
-<!-- REMOVE -->
-<div class="modal" id="removeModal">
-    <div class="modal-content">
-        <h1>Remove Map</h1>
-        <p>Are you sure you want to remove "Forbidden City" Map by "ShrideFN"?</p>
-        <button type="submit" class="deny">
-            <i class="fas fa-times"></i> 
-            Remove
-        </button>
-        <button class="cancel">Cancel</button>
     </div>
 </div>
 
@@ -58,7 +39,7 @@
             <i class="fas fa-check"></i> 
             Approve
         </button>
-        <button class="cancel">Cancel</button>
+        <button class="cancel" onclick="closeApproveModal()">Cancel</button>
     </div>
 </div>
 
@@ -71,8 +52,6 @@
             <i class="fas fa-times"></i> 
             Deny
         </button>
-        <button class="cancel">Cancel</button>
+        <button class="cancel" onclick="closeDenyModal()">Cancel</button>
     </div>
 </div>
-
-<script src="/assets/js/modal.js"></script>
