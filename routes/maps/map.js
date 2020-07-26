@@ -1,13 +1,20 @@
 const express = require('express');
 const router = express();
 
-router.get('/maps/id/:code', (req,res) => {
+const Map = require('../../models/Map');
 
-    const mapCode = req.params.code;
+router.get('/maps/id/:code', async (req,res) => {
 
-    return res.render('maps/map', {
-        mapCode: mapCode
-    });
+    const code = req.params.code;
+    try {
+
+        const map = await Map.findOne({ code: code });
+
+        return res.render('maps/map', { map });
+
+    } catch(e) {
+        console.log(e);
+    }
 
 });
 

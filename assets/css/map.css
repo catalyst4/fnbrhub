@@ -54,7 +54,7 @@ p {
 }
 
 .info-panel {
-    background: #151515;
+    background: #252525;
     border-radius: 15px;
     padding: 20px;
     margin-bottom: 15px;
@@ -76,7 +76,7 @@ p {
 
 .creator-panel {
     padding: 20px;
-    background: #151515;
+    background: #252525;
     border-radius: 15px;
 }
 
@@ -100,7 +100,7 @@ p {
     margin-bottom: 50px;
     padding: 30px;
     width: 100%;
-    background: #151515;
+    background: #252525;
     border-radius: 25px;
 }
 

@@ -9,8 +9,13 @@
             <div class="input-group">
                 <input type="text" onkeyup="validateCode()" name="code" id="code" placeholder="Map Code*" value="<% typeof code != 'undefined' ? code : ''%>">
             </div>
-            <div class="input-group">
-                <input type="text" onkeyup="validateType()" name="type" id="type" placeholder="Map Type*" value="<% typeof type != 'undefined' ? type : ''%>">
+            <div class="input-group" id="selectGroup">
+                <select class="select" name="type" onkeyup="validateType()">
+                    <option disabled selected value="maptype">Map Type*</option>
+                    <option value="deathrun">Deathrun</option>
+                    <option value="remake">Remake</option>
+                    <option value="boxfights">Box Fights</option>
+                </select>
             </div>
             <div class="input-group">
                 <input type="text" onkeyup="validateCreator()" name="creator" id="creator" placeholder="Map Creator*" value="<% typeof creator != 'undefined' ? creator : ''%>">
@@ -21,6 +26,25 @@
             <div class="input-group">
                 <input type="text" onkeyup="validateYoutubeLink()" name="youtubeLink" id="youtubeLink" placeholder="YouTube Link" value="<% typeof youtubeLink != 'undefined' ? youtubeLink : ''%>">
             </div>
+            <div class="drop-grid">
+                <div class="drop-zone">
+                    <span class="drop-zone__prompt">Image #1*</span>
+                    <input type="file" name="image1" class="drop-zone__input">
+                </div>    
+                <div class="drop-zone">
+                    <span class="drop-zone__prompt">Image #2</span>
+                    <input type="file" name="image2" class="drop-zone__input">
+                </div>    
+                <div class="drop-zone">
+                    <span class="drop-zone__prompt">Image #3</span>
+                    <input type="file" name="image3" class="drop-zone__input">
+                </div>    
+                <div class="drop-zone">
+                    <span class="drop-zone__prompt">Image #4</span>
+                    <input type="file" name="image4" class="drop-zone__input">
+                </div>    
+            </div>
+            
             <button type="submit" class="add">
                 <i class="fas fa-plus"></i>
                 Add

@@ -1,29 +1,36 @@
 <div class="header">
     <div class="main-nav primary">
-        <div class="container">
-            <div class="flex">
-                <div class="logo">
-                    <img src="/assets/img/logo.png" width="130">
-                </div>
-                <div class="nav-links">
-                    <a href="/" id="home" class="nav-link">Home</a>
-                    <a href="/maps/newest" id="newest" class="nav-link">Newest</a>
-                    <a href="/maps/popular" id="popular" class="nav-link">Popular</a>
-                    <a href="/maps/featured" id="featured" class="nav-link">Featured</a>
-                    <a href="/maps/random" id="random" class="nav-link">Random</a>
-                    <a href="/maps/submit" class="nav-link nav-btn">
-                        <span class="material-icons">
-                            send
-                        </span>
-                        Submit Map
-                    </a>
-                </div>
-                <div onclick="openNav()" class="menu">
-                    <i class="fas fa-bars"></i>
-                </div>
+        <div class="flex">
+            <div class="logo">
+                <img src="/assets/img/logo.png" width="130">
+            </div>
+            <div class="search">
+                <form action="/search" method="POST">
+                    <div class="input-field">
+                        <i class="fas fa-search"></i>
+                        <input type="text" name="search" id="search" placeholder="Search">    
+                    </div>
+                </form>
+            </div>
+            <div class="nav-links">
+                <a href="/" id="home" class="nav-link">Home</a>
+                <a href="/maps/newest" id="newest" class="nav-link">Newest</a>
+                <a href="/maps/popular" id="popular" class="nav-link">Popular</a>
+                <a href="/maps/featured" id="featured" class="nav-link">Featured</a>
+                <a href="/maps/random" id="random" class="nav-link">Random</a>
+                <a href="/maps/submit" class="nav-link nav-btn">
+                    <span class="material-icons">
+                        send
+                    </span>
+                    Submit Map
+                </a>
+            </div>
+            <div onclick="openNav()" class="menu">
+                <i class="fas fa-bars"></i>
             </div>
         </div>
     </div>
+    <!--
     <div class="type-nav">
         <div class="flex">
             <a href="/maps/deathrun" id="deathrun" class="map-type">Deathrun</a>
@@ -51,6 +58,7 @@
             <a href="/maps/" id="deathrun" class="map-type">Deathrun</a>    
         </div>
     </div>
+    -->
 
     <div id="mobile-nav" class="mobile-nav">
         <a href="">Home</a>

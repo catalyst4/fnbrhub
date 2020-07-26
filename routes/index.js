@@ -1,11 +1,24 @@
 const express = require('express');
 const router = express();
 
-router.get('/', (req,res) => {
+const Map = require('../models/Map');
+
+router.get('/', async (req,res) => {
 
     const type = 'All Maps';
 
-    res.render('maps/index', { type });
+    try {
+        await Map.find((err,maps) => {
+            err => console.log(err);
+            let noMaps = false;
+            if(maps.length < 1) {
+                noMaps = true;
+            }
+            res.render('maps/index', { maps: maps, type });
+        }).sort({ _id: -1 });
+    } catch(e) {
+        console.log(e);
+    }
 
 });
 

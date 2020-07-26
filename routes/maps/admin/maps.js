@@ -8,19 +8,15 @@ router.get('/maps/admin/maps', async (req,res) => {
     try {
         await Map.find((err,maps) => {
             err => console.log(err);
-            res.render('maps/admin/maps', { maps: maps });
-        });
+            let noMaps = false;
+            if(maps.length < 1) {
+                noMaps = true;
+            }
+            res.render('maps/admin/maps', { maps: maps, noMaps });
+        }).sort({ _id: -1 });
     } catch(e) {
         console.log(e);
     }
-
-});
-
-router.post('/api/postCode', (req,res) => {
-
-    const { code } = req.body;
-
-    console.log(code);
 
 });
 

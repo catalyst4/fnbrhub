@@ -10,10 +10,6 @@
 
 /* SEARCH BAR */
 
-.search {
-    margin-bottom: 15px;
-}
-
 .search .input-field {
     width: 100%;
     padding: 10px 15px 10px 15px;
@@ -28,6 +24,7 @@
 }
 
 .search input {
+    width: 600px;
     background: none;
     border: none;
     font-size: 16px;
@@ -37,13 +34,13 @@
 /* FEATURED MAPS SECTION */
 
 .featured-maps {
-    margin-bottom: 15px;
+    margin: 30px 0;
 }
 
 .featured {
     width: 100%;
     background: #252525;
-    padding: 25px;
+    padding: 20px 25px;
     border-radius: 15px;
     box-sizing: border-box;
 }
@@ -70,20 +67,11 @@
 }
 
 /* MAPS SECTION */
-.grid {
-    display: grid;
-    grid-template-areas: 'map map map sidebar';
-    gap: 15px;
-}
-
-.maps {
-    grid-area: map;
-}
-
 .title {
     font-family: 'Luckiest Guy', cursive;
     transform: skew(-10deg);
     font-size: 48px;
+    font-weight: 500;
     margin-bottom: 15px;
 }
 
@@ -92,7 +80,7 @@
     height: 100%;
 }
 
-.maps img {
+.map-grid img {
     max-width: 100%;
     max-height: 100%;
     border-radius: 10px;
@@ -101,6 +89,7 @@
 .map-item h1, .featured-maps h1 {
     font-family: 'Luckiest Guy', cursive;
     transform: skew(-10deg);
+    font-weight: 500;
     font-size: 36px;
 }
 
@@ -109,9 +98,7 @@
 }
 
 @media (max-width: 767px){
-    .sidebar {
-        display: none;
-    }
+
 }
 
 @media (min-width: 768px) and (max-width: 991px){
@@ -142,23 +129,14 @@
         width: 1170px;
     }
 
-    .sidebar {
-        display: block;
-    }
-
     .map-grid {
         display: grid;
-        grid-template-columns: auto auto auto;
+        grid-template-columns: repeat(3, 1fr);
         gap: 15px;
     }
 
-    .map-item h5 {
+    .map-item h5, .featured-map h5 {
         font-size: 16px;
         margin-bottom: 20px;
-    }
-
-    .search-bar .title {
-        font-size: 48px;
-        text-align: center;
     }
 }

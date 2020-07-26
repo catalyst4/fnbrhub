@@ -5,7 +5,6 @@
     <title>Admin | FNBR HUB</title>
     <link rel="stylesheet" href="/assets/css/admin/admin.css">
     <link rel="stylesheet" href="/assets/css/admin/maps.css">
-    <link rel="stylesheet" href="/assets/css/admin/modals.css">
 </head>
 <body>
     
@@ -30,6 +29,7 @@
         </div>
     </div>
 
+    <% if(noMaps == false) { %>
     <div class="table">
         <div class="container">
             <h1>Published Maps</h1>
@@ -62,7 +62,7 @@
                     <td>
                         <a href="/maps/id/<%= map.code %>" class="view"><i class="fas fa-external-link-alt"></i> View</a>
                         <a class="edit editBtn" id="editBtn" data-code="<%= map.code %>"><i class="fas fa-edit"></i> Edit</a>
-                        <a class="remove" onclick="openRemoveModal()"><i class="fas fa-trash"></i> Remove</a>
+                        <a class="remove" id="removeBtn" data-code="<%= map.code %>"><i class="fas fa-trash"></i> Remove</a>
                     </td>
                   </tr>
                     <div class="modal" id="editModal" data-code="<%= map.code %>">
@@ -96,19 +96,22 @@
                                     <i class="fas fa-save"></i>
                                     Save
                                 </button>
-                                <button class="cancel" onclick="closeEditModal()">Cancel</button>
+                                <button class="cancel" id="cancelBtn" data-code="<%= map.code %>">Cancel</button>
                             </form>
                         </div>
                     </div>
-                    <div class="modal" id="removeModal">
+                    <div class="modal" id="removeModal" data-code="<%= map.code %>">
                         <div class="modal-content">
                             <h1>Remove Map</h1>
                             <p>Are you sure you want to remove <%= map.name %> Map by "<%= map.creator %>"?</p>
-                            <button type="submit" class="deny">
-                                <i class="fas fa-times"></i> 
-                                Remove
-                            </button>
-                            <button class="cancel" onclick="closeRemoveModal()">Cancel</button>
+                            <form action="/maps/admin/delete" method="POST">
+                                <input type="hidden" name="code" value="<%= map.code %>">
+                                <button type="submit" class="remove">
+                                    <i class="fas fa-times"></i>
+                                    Remove
+                                </button>
+                            </form>
+                            <button class="cancel" id="cancelBtn" data-code="<%= map.code %>">Cancel</button>
                         </div>
                     </div>
                 <% } %>
@@ -117,8 +120,19 @@
             </div>
         </div>
     </div>
+    <% } else { %>
+        <div class="container">
+            <div class="no-data primary">
+                <div class="content">
+                    <h1>Add your first map</h1>
+                    <a onclick="openAddModal()"><i class="fas fa-plus"></i> Add Map</a>    
+                </div>
+            </div>   
+        </div>
+    <% } %>
 </body>
 </html>
-<script src="/assets/js/getMap.js"></script>
-<script src="/assets/js/validation.js"></script>
 <script src="/assets/js/modal.js"></script>
+<script src="/assets/js/dropzone.js"></script>
+<script src="/assets/js/deleteMap.js"></script>
+<script src="/assets/js/validation.js"></script>

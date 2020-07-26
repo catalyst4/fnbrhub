@@ -29,6 +29,7 @@ app.use(require('./routes/maps/admin/admin'));
 app.use(require('./routes/maps/admin/maps'));
 app.use(require('./routes/maps/admin/submissions'));
 app.use(require('./routes/maps/admin/addMap'));
+app.use(require('./routes/maps/admin/deleteMap'));
 
 app.get('*', (req,res) => {
     res.redirect('/maps');

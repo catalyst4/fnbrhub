@@ -1,9 +1,11 @@
 const name = document.querySelector(".input-group input[name='name']");
 const code = document.querySelector(".input-group input[name='code']");
-const type = document.querySelector(".input-group input[name='type']");
+const type = document.querySelector(".input-group select[name='type']");
 const creator = document.querySelector(".input-group input[name='creator']");
 const description = document.querySelector(".input-group input[name='description']");
 const youtubeLink = document.querySelector(".input-group input[name='youtubeLink']");
+const selectGroup = document.querySelector("#selectGroup");
+console.log(selectGroup + ' dldld')
 
 mapValidation = () => {
     let errors = 0;
@@ -16,8 +18,11 @@ mapValidation = () => {
         code.parentElement.setAttribute('data-error', 'Please complete this field');
         errors++;
     }
-    if(type.value == '') {
-        type.parentElement.setAttribute('data-error', 'Please complete this field');
+    console.log(type.value);
+    if(type.value == 'maptype') {
+        console.log('hello')
+        selectGroup.setAttribute('data-error', 'Please complete this field');
+        console.log('okay');
         errors++;
     }
     if(creator.value == '') {

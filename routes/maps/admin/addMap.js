@@ -8,6 +8,7 @@ router.post('/maps/admin/add', async (req,res) => {
     console.log('dkdkd')
 
     const { name, code, type, creator, description, youtubeLink } = req.body;
+    console.log(req.body);
 
     if(!name || !code || !type || !creator || !description || !youtubeLink) {
 
@@ -26,9 +27,7 @@ router.post('/maps/admin/add', async (req,res) => {
 
         await map.save();
 
-        console.log(map);
-
-        res.redirect('/maps/submit');
+        res.redirect('/maps/admin/maps');
     } catch(e) {
         console.log(e);
     }

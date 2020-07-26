@@ -4,7 +4,8 @@
 
 .table-bg {
     background: #303030;
-    border-radius: 5px;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 table {
@@ -84,3 +85,33 @@ td .approve:hover {
     transition: all 0.2s ease-in-out;
     cursor: pointer;
 }
+
+.no-data {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.no-data h1 {
+    margin-bottom: 20px;
+}
+
+.no-data a {
+    padding: 10px 25px 10px 25px;
+    background: white;
+    color: black;
+    font-weight: 550;
+    border-radius: 25px;
+    margin-right: 8px;
+    transition: all 0.2s ease-in-out;
+}
+
+.no-data a:hover {
+    box-shadow: 0 5px 15px rgba(182, 182, 182, 0.4);
+    cursor: pointer;
+}
+

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <%- include('../maps/partials/head') %>
-    <title><%= mapCode %> | FNBR HUB</title>
+    <title><%= map.name %> | FNBR HUB</title>
     <link rel="stylesheet" href="/assets/css/map.css">
 </head>
 <body>
@@ -24,16 +24,16 @@
                 </div>
                 <div class="info">
                     <div class="info-panel">
-                        <h1 class="title">Shride Shit Map Remake</h1>
-                        <h5>By ShrideFN</h5>
-                        <a class="type-btn">Remake</a>
-                        <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae facilis quas consectetur ab, rerum sed nisi? Enim doloribus explicabo omnis obcaecati quam libero, dolore recusandae, ab et, repudiandae possimus facilis!</p>
-                        <div class="code-btn" id="code-btn" onclick="myFunction()">0881-2619-9153</div>
+                        <h1 class="title"><%= map.name %></h1>
+                        <h5>By <%= map.creator %></h5>
+                        <a class="type-btn"><%= map.type %></a>
+                        <p class="description"><%= map.description %></p>
+                        <div class="code-btn" id="code-btn" onclick="myFunction()"><%= map.code %></div>
                     </div>
                     <div class="creator-panel">
                         <div class="header">
                             <img src="/assets/img/user_Shride.jpg" width="50">
-                            <h1>ShrideFN</h1>
+                            <h1><%= map.creator %></h1>
                         </div>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, magni!</p>
                     </div>
