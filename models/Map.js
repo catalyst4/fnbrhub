@@ -35,6 +35,22 @@ const mapSchema = mongoose.Schema({
         type: String,
         required: true,
         default: 'Active'
+    },
+    image1: {
+        type: String,
+        required: true
+    },
+    image2: {
+        type: String,
+        required: false
+    },
+    image3: {
+        type: String,
+        required: false
+    },
+    image4: {
+        type: String,
+        required: false
     }
 
 });

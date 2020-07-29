@@ -13,12 +13,18 @@
             <div class="flex">
                 <div class="images">
                     <div class="main-img">
-                        <img src="/images/4692-4928-5967.jpg">    
+                        <img src="https://assets.fnbrhub.com/<%= map.image1 %>">    
                     </div>
                     <div class="sub-imgs">
-                        <img src="/images/4692-4928-5967.jpg" width="200">
-                        <img src="/images/4692-4928-5967.jpg" width="200">
-                        <img src="/images/4692-4928-5967.jpg" width="200">
+                        <% if(map.image2) { %>
+                            <img src="https://assets.fnbrhub.com/<%= map.image2 %>" width="200">
+                        <% } %>
+                        <% if(map.image3) { %>
+                            <img src="https://assets.fnbrhub.com/<%= map.image3 %>" width="200">
+                        <% } %>
+                        <% if(map.image4) { %>
+                            <img src="https://assets.fnbrhub.com/<%= map.image4 %>" width="200">
+                        <% } %>
                     </div>
                     
                 </div>
@@ -26,9 +32,9 @@
                     <div class="info-panel">
                         <h1 class="title"><%= map.name %></h1>
                         <h5>By <%= map.creator %></h5>
-                        <a class="type-btn"><%= map.type %></a>
+                        <a class="type-btn primary"><%= map.type %></a>
                         <p class="description"><%= map.description %></p>
-                        <div class="code-btn" id="code-btn" onclick="myFunction()"><%= map.code %></div>
+                        <div class="code-btn primary" id="code-btn" onclick="myFunction()"><%= map.code %></div>
                     </div>
                     <div class="creator-panel">
                         <div class="header">
@@ -45,7 +51,7 @@
     <section id="similar">
         <div class="container">
             <div class="similar-maps">
-                <h1>Similar Maps</h1>
+                <h1 class="title">Similar Maps</h1>
                 <div class="flex">
                     <div class="map-item">
                         <img src="/images/4692-4928-5967.jpg" width="350">

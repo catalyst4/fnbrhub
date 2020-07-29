@@ -2,7 +2,7 @@
 <div class="modal" id="addModal">
     <div class="modal-content">
         <h1>Add Map</h1>
-        <form action="/maps/admin/add" method="POST" name="addMap" onsubmit="return mapValidation()">
+        <form action="/maps/admin/add" method="POST" name="addMap" enctype="multipart/form-data" onsubmit="return mapValidation()">
             <div class="input-group">
                 <input type="text" onkeyup="validateName()" name="name" id="name" placeholder="Map Name*" value="<% typeof name != 'undefined' ? name : ''%>">
             </div> 
@@ -12,9 +12,10 @@
             <div class="input-group" id="selectGroup">
                 <select class="select" name="type" onkeyup="validateType()">
                     <option disabled selected value="maptype">Map Type*</option>
-                    <option value="deathrun">Deathrun</option>
-                    <option value="remake">Remake</option>
-                    <option value="boxfights">Box Fights</option>
+                    <option value="Deathrun">Deathrun</option>
+                    <option value="Remake">Remake</option>
+                    <option value="Box Fights">Box Fights</option>
+                    <option value="Zone Wars">Zone Wars</option>
                 </select>
             </div>
             <div class="input-group">

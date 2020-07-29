@@ -45,25 +45,27 @@
                     </div>
                 </div>
             </div>
-        </div>
+            </div>
         </div>
     </div>
 
     <section id="maps">
         <div class="container">
+            <div class="maps">
             <h1 class="title"><%= type %></h1>
             <div class="map-grid">
                 <% for(var map of maps) { %>
                 <div class="map-item">
-                    <a href="/maps/id/<%= map.code%>" class="link-wrapper">
+                    <a href="/maps/id/<%= map.code %>" class="link-wrapper">
                         <div class="item-wrapper">
-                            <img src="/images/4692-4928-5967.jpg">
+                            <img src="https://assets.fnbrhub.com/<%= map.image1 %>">
                             <h1><%= map.name %></h1>
                             <h5>By: <%= map.creator %></h5>
                         </div>
                     </a>
                 </div>
                 <% } %>
+            </div>
             </div>
         </div>
     </section>

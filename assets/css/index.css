@@ -1,3 +1,12 @@
+body {
+    background: white;
+    color: black;
+}
+
+a {
+    color: black;
+}
+
 /* ANNOUNCEMENT BAR */
 .announcement {
     display: none;
@@ -39,7 +48,7 @@
 
 .featured {
     width: 100%;
-    background: #252525;
+    box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.1);
     padding: 20px 25px;
     border-radius: 15px;
     box-sizing: border-box;
@@ -64,9 +73,18 @@
     max-width: 100%;
     max-height: 100%;
     border-radius: 15px;
+    box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.1);
 }
 
 /* MAPS SECTION */
+.maps {
+    width: 100%;
+    box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.1);
+    padding: 20px 25px;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
 .title {
     font-family: 'Luckiest Guy', cursive;
     transform: skew(-10deg);
@@ -84,6 +102,7 @@
     max-width: 100%;
     max-height: 100%;
     border-radius: 10px;
+    box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.1);
 }
 
 .map-item h1, .featured-maps h1 {
