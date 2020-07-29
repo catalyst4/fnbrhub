@@ -117,7 +117,7 @@
     }
 
     .logo {
-        font-size: 36px;
+        font-size: 60px;
     }
 
     .menu {
@@ -125,6 +125,7 @@
     }
 
     .menu i {
-        font-size: 36px;
+        font-size: 60px;
+        color: white;
     }
 }
