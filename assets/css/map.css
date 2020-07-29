@@ -118,8 +118,6 @@ p {
     font-family: 'Luckiest Guy', cursive;
     transform: skew(-10deg);
     font-weight: 500;
-    font-size: 40px;
-    margin-bottom: 10px;
 }
 
 .map-item img{
@@ -165,12 +163,38 @@ p {
         font-size: 60px;
     }
 
+    .info-panel h5 {
+        margin-bottom: 20px;
+    }
+
+    .info-panel .type-btn {
+        padding: 15px 30px 15px 30px;
+        border-radius: 50px;
+    }
+
+    .code-btn {
+        font-size: 60px;
+    }
+
+    .header h1 {
+        font-size: 48px;
+    }
+
+    .similar-maps .title {
+        font-size: 60px;
+        margin-bottom: 10px;
+    }
+
     .similar-maps .flex {
         flex-direction: column;
     }
 
     .map-item img {
         width: 100%;
+    }
+    
+    .similar-maps h1 {
+        font-size: 60px;
     }
 }
 
