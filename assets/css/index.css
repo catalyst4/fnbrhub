@@ -118,6 +118,7 @@ a {
     }
 
     .featured-map h1, .map-item h1 {
+        margin-top: 10px;
         font-size: 60px;
     }
 

@@ -94,20 +94,27 @@
 .mobile-nav {
     display: none;
     width: 100%;
-    background: #151515;
+    background: white;
+    box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.1);
 }
 
 .mobile-nav a {
     display: block;
     width: 100%;
-    padding: 20px;
+    padding: 30px;
     box-sizing: border-box;
     text-align: center;
     font-size: 36px;
+    border-bottom: 1px solid grey;
+}
+
+.mobile-nav a:last-of-type {
+    border-bottom: none;
 }
 
 .mobile-nav a:hover {
-    background: black;
+    background: rgba(64, 0, 255,0.75);
+    color: white;
 }
 
 @media (min-width: 768px) and (max-width: 991px){
