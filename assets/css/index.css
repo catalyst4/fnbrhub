@@ -113,43 +113,26 @@ a {
         flex-direction: column;
     }
 
-    .map-grid img {
-        width: 100%;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 991px){
-    
-    .flex-featured {
-        display: flex;
-        justify-content: space-between;
-    }
-    
-    .featured-map {
-        width: 100%;
-        border-radius: 15px;
+    .featured .title, .maps .title {
+        font-size: 72px;
     }
 
-    .map-item h1 {
-        font-size: 48px;
+    .featured-map h1, .map-item h1 {
+        font-size: 60px;
     }
 
-    .map-item h5 {
+    .featured-map h5, .map-item h5 {
         font-size: 36px;
+    }
+
+    .featured-map, .map-item {
         margin-bottom: 30px;
     }
 
-    .title {
-        font-size: 48px;
+    .map-item img {
+        width: 100%;
     }
 
-    .search-bar input {
-        font-size: 36px;
-    }
-
-    .search-bar .title {
-        text-align: center;
-    }
 }
 
 @media (min-width: 1200px) {
