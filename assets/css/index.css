@@ -157,6 +157,10 @@ a {
         gap: 15px;
     }
 
+    .map-item h1, .featured-map h1 {
+        font-size: 24px;
+    }
+
     .map-item h5, .featured-map h5 {
         font-size: 16px;
         margin-bottom: 20px;

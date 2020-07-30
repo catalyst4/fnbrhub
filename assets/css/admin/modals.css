@@ -120,6 +120,7 @@
     border: 1px solid grey;
     border-radius: 5px;
     color: rgba(0, 0, 0,0.7);
+    background: none;
 }
 
 .select:hover {
@@ -128,7 +129,7 @@
 
 .drop-grid {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     margin-bottom: 10px;
 }
