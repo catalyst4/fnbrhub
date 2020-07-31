@@ -25,11 +25,11 @@ app.use(require('./routes/index'));
 app.use(require('./routes/maps/type'));
 app.use(require('./routes/maps/map'));
 app.use(require('./routes/maps/submit'));
-app.use(require('./routes/maps/admin/admin'));
-app.use(require('./routes/maps/admin/maps'));
-app.use(require('./routes/maps/admin/submissions'));
-app.use(require('./routes/maps/admin/addMap'));
-app.use(require('./routes/maps/admin/deleteMap'));
+app.use(require('./routes/admin/admin'));
+app.use(require('./routes/admin/maps'));
+app.use(require('./routes/admin/submissions'));
+app.use(require('./routes/admin/addMap'));
+app.use(require('./routes/admin/deleteMap'));
 
 app.get('*', (req,res) => {
     res.redirect('/maps');

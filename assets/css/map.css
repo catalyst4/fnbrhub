@@ -64,12 +64,14 @@ p {
 }
 
 .code-btn {
+    width: 100%;
     padding: 10px;
     border-radius: 10px;
     color: white;
     text-align: center;
     font-weight: bold;
     font-size: 30px;
+    box-sizing: border-box;
 }
 
 .code-btn:hover {

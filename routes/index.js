@@ -5,7 +5,7 @@ const Map = require('../models/Map');
 
 router.get('/', async (req,res) => {
 
-    const type = 'All Maps';
+    const title = 'All Maps';
 
     try {
         await Map.find((err,maps) => {
@@ -14,7 +14,7 @@ router.get('/', async (req,res) => {
             if(maps.length < 1) {
                 noMaps = true;
             }
-            res.render('maps/index', { maps: maps, type });
+            res.render('maps/index', { maps: maps, title });
         }).sort({ _id: -1 });
     } catch(e) {
         console.log(e);

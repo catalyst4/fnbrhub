@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express();
 
-const upload = require('../../../config/upload');
+const upload = require('../../config/upload');
 
 const multiUpload = upload.fields([
     { name: 'image1', maxCount: 1},
@@ -10,7 +10,7 @@ const multiUpload = upload.fields([
     { name: 'image4', maxCount: 1},
 ]);
 
-const Map = require('../../../models/Map');
+const Map = require('../../models/Map');
 
 router.post('/maps/admin/add', multiUpload, async (req,res) => {
 
@@ -25,6 +25,11 @@ router.post('/maps/admin/add', multiUpload, async (req,res) => {
     }
 
     try {
+
+        const isMap = await Map.findOne({ code: code });
+        if(isMap) {
+            return console.log('already map');
+        }
 
         const map = new Map({
             name,
@@ -50,7 +55,7 @@ router.post('/maps/admin/add', multiUpload, async (req,res) => {
 
         await map.save();
 
-        res.redirect('/maps/admin/maps');
+        res.redirect('/admin/maps');
 
     } catch(e) {
         console.log(e);

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <%- include('../maps/partials/head') %>
-    <title><%= type %> | FNBR HUB</title>
+    <title><%= title %> | FNBR HUB</title>
     <link rel="stylesheet" href="/assets/css/index.css">
 </head>
 <body>
@@ -52,7 +52,7 @@
     <section id="maps">
         <div class="container">
             <div class="maps">
-            <h1 class="title"><%= type %></h1>
+            <h1 class="title"><%= title %></h1>
             <div class="map-grid">
                 <% for(var map of maps) { %>
                 <div class="map-item">

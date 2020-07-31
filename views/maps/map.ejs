@@ -34,7 +34,7 @@
                         <h5>By <%= map.creator %></h5>
                         <a class="type-btn primary"><%= map.type %></a>
                         <p class="description"><%= map.description %></p>
-                        <div class="code-btn primary" id="code-btn" onclick="myFunction()"><%= map.code %></div>
+                        <input class="code-btn primary" id="code-btn" value="<%= map.code %>" onclick="copy()"></input>
                     </div>
                     <div class="creator-panel">
                         <div class="header">
@@ -76,14 +76,4 @@
 
 </body>
 </html>
-<script>
-
-    myFunction = () => {
-        const copyText = document.getElementById("code-btn");
-        copyText.select();
-        copyText.setSelectionRange(0,99999);
-
-        document.execCommand("copy");
-    }
-
-</script>
+<script src="/assets/js/copy.js"></script>

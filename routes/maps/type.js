@@ -1,100 +1,124 @@
 const express = require('express');
 const router = express();
 
-router.get('/maps/newest', (req,res) => {
+const Map = require('../../models/Map');
 
-    res.render('maps/index', { type: 'Newest'});
+router.get('/maps/newest', async (req,res) => {
 
-});
+    const title = 'Newest';
 
-router.get('/maps/popular', (req,res) => {
+    try {
 
-    res.render('maps/index', { type: 'Popular'});
+        await Map.find((err,maps) => {
+            err => console.log(err);
+            let noMaps = false;
+            if(maps.length < 1) {
+                noMaps = true;
+            }
+            return res.render('maps/index', { maps, noMaps, title });
+        }).sort({ _id: -1 });
 
-});
 
-router.get('/maps/featured', (req,res) => {
-
-    res.render('maps/index', { type: 'Featured'});
-
-});
-
-router.get('/maps/random', (req,res) => {
-
-    res.render('maps/index', { type: 'Random'});
-
-});
-
-router.get('/maps/deathrun', (req,res) => {
-
-    res.render('maps/index', { type: 'Deathrun'});
+    } catch(e) {
+        console.log(e);
+    }
 
 });
 
-router.get('/maps/zone-wars', (req,res) => {
+router.get('/maps/random', async (req,res) => {
 
-    res.render('maps/index', { type: 'Zone Wars'});
+    const title = 'Random';
 
-});
+    try {
 
-router.get('/maps/escape', (req,res) => {
+        const randomMap = await Map.aggregate([{ $sample: { size: 1} }]);
+        const map = randomMap[0];
 
-    res.render('maps/index', { type: 'Escape'});
+        return res.render('maps/map', { map, title });
 
-});
-
-router.get('/maps/prop-hunt', (req,res) => {
-
-    res.render('maps/index', { type: 'Prop Hunt'});
-
-});
-
-router.get('/maps/box-fights', (req,res) => {
-
-    res.render('maps/index', { type: 'Box Fights'});
+    } catch(e) {
+        console.log(e);
+    }
 
 });
 
-router.get('/maps/training', (req,res) => {
+router.get('/maps/:type', async (req,res) => {
 
-    res.render('maps/index', { type: 'Training'});
+    const type = req.params.type;
+    console.log(type);
 
-});
+    let title;
 
-router.get('/maps/remake', (req,res) => {
+    if(type == 'deathrun') {
+        title = 'Deathrun';
+    }
+    if(type == 'zone-wars') {
+        title = 'Zone Wars';
+    }
+    if(type == 'prop-hunt') {
+        title = 'Prop Hunt';
+    }
+    if(type == 'box-fights') {
+        title = 'Box Fights';
+    }
+    if(type == 'races') {
+        title = 'Races';
+    }
+    if(type == '1v1') {
+        title = '1v1';
+    }
+    if(type == 'remake') {
+        title = 'Remake';
+    }
+    if(type == 'escape') {
+        title = 'Escape';
+    }
+    if(type == 'hide-n-seek') {
+        title = 'Hide N Seek';
+    }
+    if(type == 'parkour') {
+        title = 'Parkour';
+    }
+    if(type == 'adventure') {
+        title = 'Adventure';
+    }
+    if(type == 'role-play') {
+        title = 'Role Play';
+    }
+    if(type == 'edit-courses') {
+        title = 'Edit Courses';
+    }
+    if(type == 'horror') {
+        title = 'Horror';
+    }
+    if(type == 'gun-game') {
+        title = 'Gun Game';
+    }
+    if(type == 'dropper') {
+        title = 'Dropper';
+    }
+    if(type == 'music') {
+        title = 'Music';
+    }
+    if(type == 'ffa') {
+        title = 'FFA';
+    }
+    if(type == 'maze') {
+        title = 'Maze';
+    }
 
-    res.render('maps/index', { type: 'Remake'});
-
-});
-
-router.get('/maps/adventure', (req,res) => {
-
-    res.render('maps/index', { type: 'Adventure'});
-
-});
-
-router.get('/maps/gun-game', (req,res) => {
-
-    res.render('maps/index', { type: 'Gun Game'});
-
-});
-
-router.get('/maps/parkour', (req,res) => {
-
-    res.render('maps/index', { type: 'Parkour'});
-
-});
-
-router.get('/maps/1v1', (req,res) => {
-
-    res.render('maps/index', { type: '1v1'});
-
-});
-
-router.get('/maps/races', (req,res) => {
-
-    res.render('maps/index', { type: 'Races'});
-
+    try {
+        await Map.find({ type: title },(err,maps) => {
+            err => console.log(err);
+            let noMaps = false;
+            if(maps.length < 1) {
+                noMaps = true;
+            }
+            res.render('maps/index', { maps: maps, title });
+        }).sort({ _id: -1 });
+    } catch(e) {
+        console.log(e);
+    }
 });
 
 module.exports = router;

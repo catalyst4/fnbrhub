@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express();
 
-const Map = require('../../../models/Map');
+const Map = require('../../models/Map');
 
 router.post('/maps/admin/delete', async (req,res) => {
 
@@ -11,7 +11,7 @@ router.post('/maps/admin/delete', async (req,res) => {
 
         await Map.findOneAndDelete({ code: code });
 
-        res.redirect('/maps/admin/maps');
+        res.redirect('/admin/maps');
 
     } catch(e) {
         console.log(e);

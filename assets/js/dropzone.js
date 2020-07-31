@@ -6,6 +6,12 @@ document.querySelectorAll('.drop-zone__input').forEach(input => {
         input.click();
     });
 
+    input.addEventListener('change', (e) => {
+        if(input.files.length) {
+            updateThumbnail(dropZoneElement, input.files[0]);
+        }
+    });
+
     dropZoneElement.addEventListener('dragover', (e) => {
         e.preventDefault();
         dropZoneElement.classList.add('drop-zone--over');
