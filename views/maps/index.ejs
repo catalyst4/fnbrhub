@@ -21,7 +21,7 @@
     <div class="featured-maps">
         <div class="container">
             <div class="featured">
-            <h1 class="title">Featured Maps</h1>
+            <h1 class="title">Featured JACOBS</h1>
             <div class="flex-featured">
                 <div class="featured-map">
                     <div class="featured-wrapper">
@@ -58,7 +58,7 @@
                 <div class="map-item">
                     <a href="/maps/id/<%= map.code %>" class="link-wrapper">
                         <div class="item-wrapper">
-                            <img src="https://assets.fnbrhub.com/<%= map.image1 %>">
+                            <img class="lazyload" data-src="https://assets.fnbrhub.com/<%= map.image1 %>">
                             <h1><%= map.name %></h1>
                             <h5>By: <%= map.creator %></h5>
                         </div>

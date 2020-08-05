@@ -24,6 +24,24 @@ router.post('/maps/admin/add', multiUpload, async (req,res) => {
 
     }
 
+    let id;
+    let linkId;
+
+    if(youtubeLink.includes('https://www.youtube.com/watch?v=')) {
+        id = youtubeLink.split('https://www.youtube.com/watch?v=');
+        linkId = id[1];
+    }
+
+    if(youtubeLink.includes('https://youtube.com/watch?v=')) {
+        id = youtubeLink.split('https://youtube.com/watch?v=');
+        linkId = id[1];
+    }
+
+    if(youtubeLink.includes('https://youtu.be/')) {
+        id = youtubeLink.split('https://youtu.be/');
+        linkId = id[1];
+    }
+
     try {
 
         const isMap = await Map.findOne({ code: code });
@@ -37,7 +55,7 @@ router.post('/maps/admin/add', multiUpload, async (req,res) => {
             type,
             creator,
             description,
-            youtubeLink
+            youtubeLink: linkId
         });
 
         if(image1) {

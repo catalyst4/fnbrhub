@@ -29,7 +29,7 @@ const upload = multer({
             cb(null, Date.now() + '-' + file.originalname);
             console.log(file);
         }
-    })
+    }), fileFilter: fileFilter
 });
 
 module.exports = upload;

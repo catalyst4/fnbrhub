@@ -13,9 +13,13 @@
             <div class="flex">
                 <div class="images">
                     <div class="main-img">
-                        <img src="https://assets.fnbrhub.com/<%= map.image1 %>">    
+                        <% if(map.youtubeLink) { %>
+                            <iframe width="100%" height="600" src="https://www.youtube.com/embed/<%= map.youtubeLink %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <% } else { %>
+                            <img src="https://assets.fnbrhub.com/<%= map.image1 %>">
+                        <% } %>
                     </div>
-                    <div class="sub-imgs">
+                    <div class="sub-imgs"> 
                         <% if(map.image2) { %>
                             <img src="https://assets.fnbrhub.com/<%= map.image2 %>" width="200">
                         <% } %>

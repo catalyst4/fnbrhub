@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const { map } = require('../routes');
 
 const mapSchema = mongoose.Schema({
 

@@ -68,7 +68,8 @@
                     <div class="modal" id="editModal" data-code="<%= map.code %>">
                         <div class="modal-content">
                             <h1>Edit Map</h1>
-                            <form action="/maps/admin/edit" method="POST" onsubmit="return mapValidation()">
+                            <form action="/admin/edit" method="POST">
+                                <input type="hidden" name="id" value="<%= map.code %>">
                                 <div class="input-group">
                                     <input type="text" onkeyup="validateName()" name="name" placeholder="Map Name*" value="<%= map.name %>">
                                 </div>
