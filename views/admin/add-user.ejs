@@ -9,17 +9,18 @@
     <div class="flex">
         <div class="login-box">
             <div class="login">
-                <div class="title">Login</div>
-                <form action="/admin/login" method="POST">
+                <div class="title">Add User</div>
+                <form action="/admin/addUser" method="POST">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" placeholder="Name">
                     <label for="username">Username</label>
                     <input type="text" name="username" placeholder="Username">
                     <label for="password">Password</label>
                     <input type="password" name="password" placeholder="Password">
-                    <button type="submit">Login</button>    
+                    <button type="submit">Add User</button>    
                 </form>
             </div>
         </div>    
     </div>
-    
 </body>
 </html>

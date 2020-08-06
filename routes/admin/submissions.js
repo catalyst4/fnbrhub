@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express();
 
-router.get('/admin/submissions', (req,res) => {
+const ensureAuth = require('../../config/auth');
+
+router.get('/admin/submissions', ensureAuth, (req,res) => {
 
     res.render('admin/submissions');
 

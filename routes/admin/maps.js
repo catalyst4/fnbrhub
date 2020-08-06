@@ -1,9 +1,11 @@
 const express = require('express');
 const router  = express();
 
+const ensureAuth = require('../../config/auth');
+
 const Map = require('../../models/Map');
 
-router.get('/admin/maps', async (req,res) => {
+router.get('/admin/maps', ensureAuth, async (req,res) => {
 
     try {
         await Map.find((err,maps) => {

@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express();
 
+const ensureAuth = require('../../config/auth');
+
 const upload = require('../../config/upload');
 
 const multiUpload = upload.fields([
@@ -12,7 +14,7 @@ const multiUpload = upload.fields([
 
 const Map = require('../../models/Map');
 
-router.post('/maps/admin/add', multiUpload, async (req,res) => {
+router.post('/maps/admin/add', ensureAuth, multiUpload, async (req,res) => {
 
     const { name, code, type, creator, description, youtubeLink } = req.body;
     const image1 = req.files.image1;

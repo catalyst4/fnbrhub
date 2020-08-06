@@ -3,7 +3,11 @@ const router = express();
 
 router.get('/admin', (req,res) => {
 
-    res.render('admin/admin')
+    if(!req.user) {
+        return res.render('admin/login');
+    }
+
+    return res.render('admin/admin');
 
 });
 

@@ -1,9 +1,11 @@
 const express = require('express');
 const router = express();
 
+const ensureAuth = require('../../config/auth');
+
 const Map = require('../../models/Map');
 
-router.post('/admin/edit', async (req,res) => {
+router.post('/admin/edit', ensureAuth, async (req,res) => {
 
     const { id, name, code, type, creator, description, youtubeLink } = req.body;
 

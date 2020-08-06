@@ -44,9 +44,30 @@
     margin-right: 5px;
 }
 
+.user {
+    margin-bottom: 15px;
+}
+
+.user h1 {
+    margin-right: 10px;
+}
+
+.user .container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 .flex-card {
     display: flex;
     justify-content: space-between;
+}
+
+.user button {
+    background: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
 }
 
 .card {

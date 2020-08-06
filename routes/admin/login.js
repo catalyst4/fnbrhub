@@ -6,9 +6,9 @@ const moment = require('moment');
 
 const jwtPassword = process.env.JWT_PASSWORD;
 
-router.get('/admin/login', (req,res) => {
-    res.render('admin/login');
-})
+const ensureAuth = require('../../config/auth');
+
+const User = require('../../models/User');
 
 router.post('/admin/login', async (req,res) => {
 
@@ -36,9 +36,11 @@ router.post('/admin/login', async (req,res) => {
                 }, jwtPassword);
                 
                 // Add to DB for user
+                user.authTokens.push({ token });
+                await user.save();
 
                 // Add to cache + redirect to /admin
-                return res.cookie('userAuth', token).redirect('admin');
+                return res.cookie('userAuth', token).redirect('/admin');
 
             } else {
                 // Password incorrect
@@ -49,6 +51,27 @@ router.post('/admin/login', async (req,res) => {
             // User doesn't exist but don't tell
             return res.render('admin/login', { err });
         }
+
+    } catch(e) {
+        console.log(e);
+    }
+
+});
+
+router.post('/admin/logout', ensureAuth, async (req,res) => {
+
+    try {
+        
+        const user = req.user;
+        const userAuth = req.cookies.userAuth
+
+        user.authTokens = user.authTokens.filter(token => {
+            return token.token !== userAuth;
+        });
+
+        await user.save();
+        
+        res.clearCookie('userAuth').redirect('/');
 
     } catch(e) {
         console.log(e);
