@@ -6,6 +6,8 @@ const moment = require('moment');
 
 const jwtPassword = process.env.JWT_PASSWORD;
 console.log(process.env);
+console.log('---------------')
+console.log(process.env.env);
 
 const ensureAuth = require('../../config/auth');
 
