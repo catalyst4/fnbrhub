@@ -3,7 +3,6 @@ const code = document.querySelector(".input-group input[name='code']");
 const type = document.querySelector(".input-group select[name='type']");
 const creator = document.querySelector(".input-group input[name='creator']");
 const description = document.querySelector(".input-group input[name='description']");
-const youtubeLink = document.querySelector(".input-group input[name='youtubeLink']");
 const selectGroup = document.querySelector("#selectGroup");
 console.log(selectGroup + ' dldld')
 
@@ -33,10 +32,6 @@ mapValidation = () => {
         description.parentElement.setAttribute('data-error', 'Please complete this field');
         errors++;
     }
-    if(youtubeLink.value == '') {
-        youtubeLink.parentElement.setAttribute('data-error', 'Please complete this field'); 
-        errors++;
-    }
 
     if(name.value != '') {
         name.parentElement.removeAttribute('data-error'); 
@@ -52,9 +47,6 @@ mapValidation = () => {
     }
     if(description.value != '') {
         description.parentElement.removeAttribute('data-error'); 
-    }
-    if(youtubeLink.value != '') {
-        youtubeLink.parentElement.removeAttribute('data-error');  
     }
 
     if(errors > 0) {
@@ -102,12 +94,5 @@ validateDescription = () => {
         description.parentElement.setAttribute('data-error', 'Please complete this field');  
     } else {
         description.parentElement.removeAttribute('data-error');    
-    }
-}
-validateYoutubeLink = () => {
-    if(youtubeLink.value == '') {
-        youtubeLink.parentElement.setAttribute('data-error', 'Please complete this field');  
-    } else {
-        youtubeLink.parentElement.removeAttribute('data-error');    
     }
 }
