@@ -47,6 +47,7 @@ app.use(require('./routes/maps/submit'));
 app.use(require('./routes/admin/admin'));
 app.use(require('./routes/admin/maps'));
 app.use(require('./routes/admin/submissions'));
+app.use(require('./routes/admin/featured'));
 app.use(require('./routes/admin/addMap'));
 app.use(require('./routes/admin/editMap'));
 app.use(require('./routes/admin/deleteMap'));
