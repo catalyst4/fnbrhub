@@ -48,7 +48,7 @@ router.post('/maps/admin/add', ensureAuth, multiUpload, async (req,res) => {
 
         const isMap = await Map.findOne({ code: code });
         if(isMap) {
-            return console.log('already map');
+            return res.redirect('/admin');
         }
 
         const map = new Map({

@@ -10,8 +10,12 @@ router.get('/maps/id/:code', async (req,res) => {
 
         const map = await Map.findOne({ code: code });
 
-        return res.render('maps/map', { map });
-
+        if(map) {
+            return res.render('maps/map', { map });
+        } else {
+            return res.redirect('/');
+        }
+        
     } catch(e) {
         console.log(e);
     }

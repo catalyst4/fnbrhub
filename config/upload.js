@@ -27,7 +27,6 @@ const upload = multer({
         acl: 'public-read',
         key: (request, file, cb) => {
             cb(null, Date.now() + '-' + file.originalname);
-            console.log(file);
         }
     }), fileFilter: fileFilter
 });
