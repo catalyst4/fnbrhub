@@ -26,22 +26,29 @@ router.post('/maps/admin/add', ensureAuth, multiUpload, async (req,res) => {
 
     }
 
-    let id;
-    let linkId;
+    let split1;
+    let split2;
+    let videoId;
 
     if(youtubeLink.includes('https://www.youtube.com/watch?v=')) {
-        id = youtubeLink.split('https://www.youtube.com/watch?v=');
-        linkId = id[1];
+        split1 = youtubeLink.split('https://www.youtube.com/watch?v=');
+        videoId = split1[1];
     }
 
     if(youtubeLink.includes('https://youtube.com/watch?v=')) {
-        id = youtubeLink.split('https://youtube.com/watch?v=');
-        linkId = id[1];
+        split1 = youtubeLink.split('https://youtube.com/watch?v=');
+        videoId = split1[1];
     }
 
     if(youtubeLink.includes('https://youtu.be/')) {
-        id = youtubeLink.split('https://youtu.be/');
-        linkId = id[1];
+        split1 = youtubeLink.split('https://youtu.be/');
+        videoId = split1[1];
+    }
+
+    if(youtubeLink.includes('&feature=emb_title')) {
+        split1 = youtubeLink.split('https://www.youtube.com/watch?v=');
+        split2 = split1[1].split('&feature=emb_title');
+        videoId = split2[0];
     }
 
     try {
@@ -57,7 +64,7 @@ router.post('/maps/admin/add', ensureAuth, multiUpload, async (req,res) => {
             type,
             creator,
             description,
-            youtubeLink: linkId
+            youtubeLink: videoId
         });
 
         if(image1) {

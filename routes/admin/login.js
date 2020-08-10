@@ -5,8 +5,6 @@ const jwt = require('jsonwebtoken');
 const moment = require('moment');
 
 const jwtPassword = process.env.JWT_PASSWORD;
-console.log('---------------')
-console.log(process.env.JWT_PASSWORD);
 
 const ensureAuth = require('../../config/auth');
 
