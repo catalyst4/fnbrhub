@@ -37,7 +37,7 @@ const mapSchema = mongoose.Schema({
     },
     image1: {
         type: String,
-        required: false
+        required: true
     },
     image2: {
         type: String,
