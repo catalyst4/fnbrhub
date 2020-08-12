@@ -2,7 +2,6 @@ const name = document.querySelector(".input-group input[name='name']");
 const code = document.querySelector(".input-group input[name='code']");
 const type = document.querySelector(".input-group select[name='type']");
 const creator = document.querySelector(".input-group input[name='creator']");
-const description = document.querySelector(".input-group input[name='description']");
 const selectGroup = document.querySelector("#selectGroup");
 const dropzone = document.querySelector(".drop-zone");
 const imageThumb = document.querySelector(".drop-zone__thumb");
@@ -27,11 +26,6 @@ mapValidation = () => {
         creator.parentElement.setAttribute('data-error', 'Please complete this field');
         errors++;
     }
-    if(description.value == '') {
-        description.parentElement.setAttribute('data-error', 'Please complete this field');
-        errors++;
-    }
-
     if(name.value != '') {
         name.parentElement.removeAttribute('data-error'); 
     }
@@ -43,9 +37,6 @@ mapValidation = () => {
     }
     if(creator.value != '') {
         creator.parentElement.removeAttribute('data-error'); 
-    }
-    if(description.value != '') {
-        description.parentElement.removeAttribute('data-error'); 
     }
     if(imageThumb == null) {
         dropzone.classList.add('error');
@@ -85,12 +76,5 @@ validateCreator = () => {
         creator.parentElement.setAttribute('data-error', 'Please complete this field');  
     } else {
         creator.parentElement.removeAttribute('data-error');    
-    }
-}
-validateDescription = () => {
-    if(description.value == '') {
-        description.parentElement.setAttribute('data-error', 'Please complete this field');  
-    } else {
-        description.parentElement.removeAttribute('data-error');    
     }
 }

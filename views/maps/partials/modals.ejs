@@ -13,10 +13,10 @@
                 <input type="text" onkeyup="validateCreator()" name="creator" id="creator" placeholder="Map Creator*" value="<% typeof creator != 'undefined' ? creator : ''%>">
             </div>
             <div class="input-group">
-                <input type="text" onkeyup="validateDescription()" name="description" id="description" placeholder="Description" value="<% typeof description != 'undefined' ? description : ''%>">
+                <input type="text" name="description" id="description" placeholder="Description" value="<% typeof description != 'undefined' ? description : ''%>">
             </div>
             <div class="input-group">
-                <input type="text" onkeyup="validateYoutubeLink()" name="youtubeLink" id="youtubeLink" placeholder="YouTube Link" value="<% typeof youtubeLink != 'undefined' ? youtubeLink : ''%>">
+                <input type="text" name="youtubeLink" id="youtubeLink" placeholder="YouTube Link" value="<% typeof youtubeLink != 'undefined' ? youtubeLink : ''%>">
             </div>
             <div class="input-group" id="selectGroup">
                 <select class="select" name="type" onkeyup="validateType()">
