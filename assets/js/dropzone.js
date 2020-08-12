@@ -25,6 +25,10 @@ document.querySelectorAll('.drop-zone__input').forEach(input => {
 
     dropZoneElement.addEventListener('drop', (e) => {
         e.preventDefault();
+
+        if(dropZoneElement.classList.contains('error')) {
+            dropZoneElement.classList.remove('error');
+        }
         
         if(e.dataTransfer.files.length) {
             input.files = e.dataTransfer.files;

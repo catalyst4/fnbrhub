@@ -53,6 +53,7 @@ app.use(require('./routes/admin/editMap'));
 app.use(require('./routes/admin/deleteMap'));
 app.use(require('./routes/admin/login'));
 app.use(require('./routes/admin/addUser'));
+app.use(require('./routes/admin/checkMap'));
 
 app.get('*', (req,res) => {
     res.redirect('/maps');

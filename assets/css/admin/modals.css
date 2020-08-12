@@ -148,6 +148,10 @@
     border-radius: 10px;
 }
 
+.error {
+    border: 2px dashed red!important;
+}
+
 .drop-zone--over {
     border: 1px solid grey;
 }

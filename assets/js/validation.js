@@ -4,7 +4,8 @@ const type = document.querySelector(".input-group select[name='type']");
 const creator = document.querySelector(".input-group input[name='creator']");
 const description = document.querySelector(".input-group input[name='description']");
 const selectGroup = document.querySelector("#selectGroup");
-console.log(selectGroup + ' dldld')
+const dropzone = document.querySelector(".drop-zone");
+const imageThumb = document.querySelector(".drop-zone__thumb");
 
 mapValidation = () => {
     let errors = 0;
@@ -19,9 +20,7 @@ mapValidation = () => {
     }
     console.log(type.value);
     if(type.value == 'maptype') {
-        console.log('hello')
         selectGroup.setAttribute('data-error', 'Please complete this field');
-        console.log('okay');
         errors++;
     }
     if(creator.value == '') {
@@ -48,9 +47,11 @@ mapValidation = () => {
     if(description.value != '') {
         description.parentElement.removeAttribute('data-error'); 
     }
+    if(imageThumb == null) {
+        dropzone.classList.add('error');
+    }
 
     if(errors > 0) {
-        console.log(errors);
         return false;
     }
 
@@ -58,12 +59,9 @@ mapValidation = () => {
 }
 
 validateName = () => {
-    console.log('herro');
     if(name.value == '') {
-        console.log('okay')
         name.parentElement.setAttribute('data-error', 'Please complete this field');  
     } else {
-        console.log('wtf')
         name.parentElement.removeAttribute('data-error');    
     }
 }

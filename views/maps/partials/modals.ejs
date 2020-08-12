@@ -4,10 +4,19 @@
         <h1>Add Map</h1>
         <form action="/maps/admin/add" method="POST" name="addMap" enctype="multipart/form-data" onsubmit="return mapValidation()">
             <div class="input-group">
+                <input type="text" onkeyup="validateCode(), mapExist()" name="code" id="code" placeholder="Map Code*" value="<% typeof code != 'undefined' ? code : ''%>">
+            </div>
+            <div class="input-group">
                 <input type="text" onkeyup="validateName()" name="name" id="name" placeholder="Map Name*" value="<% typeof name != 'undefined' ? name : ''%>">
             </div> 
             <div class="input-group">
-                <input type="text" onkeyup="validateCode()" name="code" id="code" placeholder="Map Code*" value="<% typeof code != 'undefined' ? code : ''%>">
+                <input type="text" onkeyup="validateCreator()" name="creator" id="creator" placeholder="Map Creator*" value="<% typeof creator != 'undefined' ? creator : ''%>">
+            </div>
+            <div class="input-group">
+                <input type="text" onkeyup="validateDescription()" name="description" id="description" placeholder="Description" value="<% typeof description != 'undefined' ? description : ''%>">
+            </div>
+            <div class="input-group">
+                <input type="text" onkeyup="validateYoutubeLink()" name="youtubeLink" id="youtubeLink" placeholder="YouTube Link" value="<% typeof youtubeLink != 'undefined' ? youtubeLink : ''%>">
             </div>
             <div class="input-group" id="selectGroup">
                 <select class="select" name="type" onkeyup="validateType()">
@@ -35,15 +44,6 @@
                     <option value="Maze">Maze</option>
                     <option value="SND">SND</option>
                 </select>
-            </div>
-            <div class="input-group">
-                <input type="text" onkeyup="validateCreator()" name="creator" id="creator" placeholder="Map Creator*" value="<% typeof creator != 'undefined' ? creator : ''%>">
-            </div>
-            <div class="input-group">
-                <input type="text" onkeyup="validateDescription()" name="description" id="description" placeholder="Description" value="<% typeof description != 'undefined' ? description : ''%>">
-            </div>
-            <div class="input-group">
-                <input type="text" onkeyup="validateYoutubeLink()" name="youtubeLink" id="youtubeLink" placeholder="YouTube Link" value="<% typeof youtubeLink != 'undefined' ? youtubeLink : ''%>">
             </div>
             <div class="drop-grid">
                 <div class="drop-zone">
@@ -98,3 +98,5 @@
         <button class="cancel" onclick="closeDenyModal()">Cancel</button>
     </div>
 </div>
+<script src="/assets/js/mapExist.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
