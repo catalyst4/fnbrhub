@@ -1,6 +1,7 @@
 body {
     background: white;
     color: black;
+    position: relative;
 }
 
 a {
@@ -68,6 +69,7 @@ a {
 
 /* MAPS SECTION */
 .maps {
+    margin-top: 30px;
     width: 100%;
     box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.1);
     padding: 20px 25px;

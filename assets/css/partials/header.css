@@ -4,7 +4,7 @@
 
 .main-nav {
     padding: 30px 0 30px 0;
-    box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.3);
+    background: rgba(64, 0, 255,0.75);
 }
 
 .main-nav .flex {
@@ -47,29 +47,35 @@
 }
 
 .type-nav {
-    padding: 15px 0 15px 0;
+    padding: 15px 0;
+    background: rgb(100, 55, 233);
 }
 
-.type-nav .flex{
-    display: flex;
-    justify-content: space-around;
+.swiper-container {
+    width: 99%;
+    height: 100%;
+}
+
+.swiper-wrapper {
+    align-items: center;
 }
 
 .map-type {
+    display: block;
     background: none;
-    color: white;
-    padding: 8px 20px 8px 20px; 
+    padding: 8px 10px 8px 10px; 
     border-radius: 25px;
     font-size: 14px;
-    margin-right: 10px;
     border: 1px solid white;
+    text-align: center;
+    color: white;
 }
 
 .map-type:hover {
     background: white;
-    color: black;
     transition: all 0.2s ease-in-out;
     border: 1px solid white;
+    color: black;
 }
 
 .active {
@@ -78,13 +84,14 @@
 }
 
 .active-type {
+    display: block;
     background: white;
-    color: black;
-    padding: 8px 20px 8px 20px; 
-    border-radius: 20px;
+    padding: 8px 10px 8px 10px; 
+    border-radius: 25px;
     font-size: 14px;
-    margin-right: 10px;
     border: 1px solid white;
+    text-align: center;
+    color: black;
 }
 
 .menu {

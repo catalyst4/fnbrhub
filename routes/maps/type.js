@@ -45,7 +45,6 @@ router.get('/maps/random', async (req,res) => {
 router.get('/maps/:type', async (req,res) => {
 
     const type = req.params.type;
-    console.log(type);
 
     let title;
 
@@ -60,6 +59,12 @@ router.get('/maps/:type', async (req,res) => {
     }
     if(type == 'box-fights') {
         title = 'Box Fights';
+    }
+    if(type == 'puzzle') {
+        title = 'Puzzle';
+    }
+    if(type == 'mini-game') {
+        title = 'Mini Game';
     }
     if(type == 'races') {
         title = 'Races';
@@ -82,8 +87,8 @@ router.get('/maps/:type', async (req,res) => {
     if(type == 'adventure') {
         title = 'Adventure';
     }
-    if(type == 'role-play') {
-        title = 'Role Play';
+    if(type == 'roleplay') {
+        title = 'Roleplay';
     }
     if(type == 'edit-courses') {
         title = 'Edit Courses';
@@ -106,6 +111,10 @@ router.get('/maps/:type', async (req,res) => {
     if(type == 'maze') {
         title = 'Maze';
     }
+    if(type == 'snd') {
+        title = 'Search & Destroy';
+    }
+    
 
     try {
         await Map.find({ type: title },(err,maps) => {
