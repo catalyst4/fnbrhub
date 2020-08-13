@@ -46,7 +46,7 @@
                     <a href="/maps/races" id="races" class="map-type">Races</a>
                 </div>
                 <div class="swiper-slide">
-                    <a href="/maps/1v1" id="onevone" class="map-type">1v1</a>
+                    <a href="/maps/1v1" id="1v1" class="map-type">1v1</a>
                 </div>
                 <div class="swiper-slide">
                     <a href="/maps/remake" id="remake" class="map-type">Remake</a>
@@ -111,6 +111,10 @@
       spaceBetween: 15,
       freeMode: true,
       breakpoints: {
+        0: {
+            slidesPerView: 4,
+            spaceBetween: 15
+        },
         600: {
             slidesPerView: 8,
             spaceBetween: 15
@@ -194,6 +198,9 @@
         } else if(url.includes('/maps/mini-game')) {
             minigame.classList.remove('map-type');
             minigame.classList.add('active-type');
+        } else if(url.includes('/maps/1v1')) {
+            onevone.classList.remove('map-type');
+            onevone.classList.add('active-type');
         } else if(url.includes('/maps/races')) {
             races.classList.remove('map-type');
             races.classList.add('active-type');
