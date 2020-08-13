@@ -56,7 +56,6 @@
 }
 
 .swiper-container {
-    width: 99%;
     height: 100%;
 }
 
@@ -156,4 +155,28 @@
         font-size: 32px;
     }
 
+    .swiper-container {
+        width: 95%;
+    }
+
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+
+    .swiper-container {
+        width: 99%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 60%;
+    }
+
+    .swiper-container {
+        width: 99%;
+    }
 }
