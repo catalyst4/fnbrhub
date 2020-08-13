@@ -14,7 +14,9 @@
                 <div class="images">
                     <div class="main-img">
                         <% if(map.youtubeLink) { %>
-                            <iframe style="border-radius: 10px;" width="100%" height="600" src="https://www.youtube.com/embed/<%= map.youtubeLink %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="yt-container">
+                                <iframe class="video" style="border-radius: 10px;" src="https://www.youtube.com/embed/<%= map.youtubeLink %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
                         <% } else { %>
                             <img src="https://assets.fnbrhub.com/<%= map.image1 %>">
                         <% } %>
