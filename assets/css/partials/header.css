@@ -152,7 +152,7 @@
         color: white;
     }
     
-    .map-type {
+    .map-type, .active-type {
         font-size: 32px;
     }
 
