@@ -143,4 +143,9 @@
         font-size: 60px;
         color: white;
     }
+    
+    .map-type {
+        font-size: 20px;
+    }
+
 }
