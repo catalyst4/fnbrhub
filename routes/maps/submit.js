@@ -3,6 +3,7 @@ const router = express();
 
 router.get('/maps/submit', (req,res) => {
 
+    console.log('hello');
     res.render('maps/submit');
 
 });

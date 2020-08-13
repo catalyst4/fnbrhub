@@ -49,11 +49,19 @@
         </div>
     </div> -->
 
+    <section id="search">
+        <div class="container">
+            <div class="search">
+                <input type="text" name="search" id="search" placeholder="Search maps...">
+            </div>
+        </div>
+    </section>
+
     <section id="maps">
         <div class="container">
             <div class="maps">
             <h1 class="title"><%= title %></h1>
-            <div class="map-grid">
+            <div class="map-grid" id="map-grid">
                 <% for(var map of maps) { %>
                 <div class="map-item">
                     <a href="/maps/id/<%= map.code %>" class="link-wrapper">

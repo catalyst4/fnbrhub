@@ -115,7 +115,6 @@ router.get('/maps/:type', async (req,res) => {
         title = 'Search & Destroy';
     }
     
-
     try {
         await Map.find({ type: title },(err,maps) => {
             err => console.log(err);

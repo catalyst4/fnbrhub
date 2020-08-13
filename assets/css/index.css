@@ -20,25 +20,17 @@ a {
 
 /* SEARCH BAR */
 
-.search .input-field {
+.search {
+    margin-top: 30px;
     width: 100%;
-    padding: 10px 15px 10px 15px;
-    border-radius: 8px;
-    background: #252525;
+    box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.1);
+    padding: 20px 25px;
+    border-radius: 15px;
     box-sizing: border-box;
 }
 
-.input-field i {
-    margin-right: 5px;
-    color: grey;
-}
-
 .search input {
-    width: 600px;
-    background: none;
-    border: none;
-    font-size: 16px;
-    color: white;
+    font-size: 24px;
 }
 
 /* FEATURED MAPS SECTION */

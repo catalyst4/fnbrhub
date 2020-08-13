@@ -1,1 +1,113 @@
+body {
+    background: white;
+}
 
+.search {
+    margin-top: 30px;
+    width: 100%;
+    box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.1);
+    padding: 20px 25px;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.search input {
+    font-size: 24px;
+}
+
+.maps {
+    color: black;
+    margin-top: 30px;
+    width: 100%;
+    box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.1);
+    padding: 20px 25px;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.item-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.map-grid img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.1);
+}
+
+.map-item h1, .featured-maps h1 {
+    font-family: 'Luckiest Guy', cursive;
+    transform: skew(-10deg);
+    font-weight: 500;
+    font-size: 36px;
+    color: black;
+}
+
+.map-item h5 {
+    color: black;
+    opacity: 0.9;
+}
+
+@media (min-width: 375px) and (max-width: 991px){
+
+    .flex-featured {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .featured .title, .maps .title {
+        font-size: 36px;
+    }
+
+    .featured-map h1, .map-item h1 {
+        margin-top: 10px;
+        font-size: 30px;
+    }
+
+    .featured-map h5, .map-item h5 {
+        font-size: 20px;
+    }
+
+    .featured-map, .map-item {
+        margin-bottom: 30px;
+    }
+
+    .map-item img {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+
+    .flex-featured {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .featured-map {
+        width: 32%;
+        border-radius: 15px;
+    }
+
+    .map-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+
+    .map-item h1, .featured-map h1 {
+        font-size: 24px;
+    }
+
+    .map-item h5, .featured-map h5 {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+}

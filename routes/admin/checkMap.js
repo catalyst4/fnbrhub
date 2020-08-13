@@ -17,4 +17,23 @@ router.post('/api/checkMap', async (req,res) => {
 
 });
 
+router.post('/api/searchMaps', async (req,res) => {
+
+    const query = req.body.query;
+    
+    try {
+        await Map.find({ type: query },(err,maps) => {
+            err => console.log(err);
+            let noMaps = false;
+            if(maps.length < 1) {
+                noMaps = true;
+            }
+            return res.json({ maps });
+        }).sort({ _id: -1 });
+    } catch(e) {
+        console.log(e);
+    }
+
+});
+
 module.exports = router;
