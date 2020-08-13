@@ -74,7 +74,7 @@
     color: white;
 }
 
-.map-type i {
+.map-type i, .active-type i {
     margin-right: 5px;
 }
 
