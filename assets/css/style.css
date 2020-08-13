@@ -67,6 +67,7 @@ input, select, textarea, button {
 @media (max-width: 767px){
     .container {
         width: 100%;
+        box-sizing: border-box;
     }
 }
 

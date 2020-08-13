@@ -108,7 +108,7 @@ a {
     opacity: 0.9;
 }
 
-@media (min-width: 768px) and (max-width: 991px){
+@media (min-width: 375px) and (max-width: 991px){
 
     .flex-featured {
         display: flex;
@@ -116,16 +116,16 @@ a {
     }
 
     .featured .title, .maps .title {
-        font-size: 72px;
+        font-size: 36px;
     }
 
     .featured-map h1, .map-item h1 {
         margin-top: 10px;
-        font-size: 60px;
+        font-size: 30px;
     }
 
     .featured-map h5, .map-item h5 {
-        font-size: 36px;
+        font-size: 20px;
     }
 
     .featured-map, .map-item {
@@ -134,6 +134,7 @@ a {
 
     .map-item img {
         width: 100%;
+        box-sizing: border-box;
     }
 
 }

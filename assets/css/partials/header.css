@@ -1,8 +1,5 @@
-.header {
-    width: 100%;
-}
-
 .main-nav {
+    width: 100%;
     padding: 30px 0 30px 0;
     background: rgba(0, 132, 255, 0.9);
 }
@@ -110,6 +107,7 @@
     width: 100%;
     background: white;
     box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
 }
 
 .mobile-nav a {
@@ -132,14 +130,14 @@
     color: white;
 }
 
-@media (min-width: 768px) and (max-width: 991px){
+@media (min-width: 375px) and (max-width: 991px){
 
     .nav-links {
         display: none;
     }
 
     .logo {
-        font-size: 60px;
+        font-size: 30px;
     }
 
     .menu {
@@ -147,12 +145,12 @@
     }
 
     .menu i {
-        font-size: 60px;
+        font-size: 30px;
         color: white;
     }
     
     .map-type, .active-type {
-        font-size: 32px;
+        font-size: 14px;
     }
 
     .swiper-container {
