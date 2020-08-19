@@ -97,7 +97,7 @@ body {
     cursor: pointer;
 }
 
-@media (min-width: 375px) and (max-width: 767px){
+@media (min-width: 0px) and (max-width: 767px){
 
     .maps {
         margin-top: 10px;
