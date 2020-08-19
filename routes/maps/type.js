@@ -44,7 +44,9 @@ router.get('/maps/random', async (req,res) => {
 
 router.get('/maps/:type', async (req,res) => {
 
-    const type = req.params.type;
+    const typeParam = req.params.type;
+
+    const type = typeParam.toLowerCase();
 
     let title;
 

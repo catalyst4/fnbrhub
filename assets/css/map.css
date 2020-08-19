@@ -1,232 +1,144 @@
 body {
     background: white;
     color: black;
-}
-
-#map {
-    margin-top: 30px;
-}
-
-.title {
-    font-family: 'Luckiest Guy', cursive;
-    transform: skew(-10deg);
-    font-weight: 500;
-    font-size: 40px;
-}
-
-h5 {
-    font-size: 20px;
-    opacity: 0.9;
-    margin-bottom: 10px;
-}
-
-p {
-    font-size: 18px;
-}
-
-.type-btn {
-    padding: 6px 15px 6px 15px; 
-    border-radius: 20px;
-    font-size: 14px;
-    margin-right: 10px;
-    color: white;
-    box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.1);
-}
-
-#map .flex {
-    display: flex;
-    justify-content: space-between;
-}
-
-.main-img {
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-.main-img img {
-    width: 100%;
-    border-radius: 15px;
-    box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.1);
-}
-
-.yt-container {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 56.25%;
-}
-
-.video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
     height: 100%;
 }
 
-.sub-imgs img {
-    margin-right: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.1);
+.maps {
+    display: flex;
 }
 
-.info-panel {
-    background: white;
+/* MAP IMAGES */
+#map .swiper-container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gallery-top .swiper-slide, .gallery-thumbs .swiper-slide {
+    background-size: cover;
+    background-position: center;
+}
+
+.gallery-top iframe {
+    max-width: 100%;
+    height: auto;
     border-radius: 15px;
-    padding: 20px;
-    margin-bottom: 15px;
-    box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.05);
+}
+
+.gallery-top img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.05);
+}
+
+.gallery-top {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.iframe-container {
+    width: 100%;
+    box-sizing: border-box;
+    position: absolute;
+}
+
+.gallery-thumbs {
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+
+.gallery-thumbs .swiper-slide {
+    width: 25%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+.gallery-thumbs .swiper-slide-thumb-active {
+    opacity: 1;
+}
+
+.gallery-thumbs img {
+    border-radius: 10px;
+    box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* INFO */
+.map-info {
+    width: 100%;
+    box-sizing: border-box;
+    background: white;
+    padding: 25px;
+    box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.05);
+    border-radius: 15px;
+}
+
+.type-btn {
+    display: inline-block;
+    color: white;
+    padding: 6px 20px;
+    background: rgba(0, 132, 255, 0.75);
+    border-radius: 50px;
+    margin-top: 5px;
 }
 
 .code-btn {
     width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    color: white;
-    text-align: center;
-    font-weight: bold;
-    font-size: 30px;
     box-sizing: border-box;
+    font-size: 24px;
+    text-align: center;
+    padding: 15px;
+    background: rgba(0, 132, 255, 0.75);
+    color: white;
+    font-weight: bold;
+    border-radius: 15px;
 }
 
 .code-btn:hover {
     cursor: pointer;
 }
 
-.creator-panel {
-    padding: 20px;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.1);
-}
+@media (min-width: 375px) and (max-width: 767px){
 
-.creator-panel .header {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.creator-panel h1 {
-    font-size: 24px;
-}
-
-.creator-panel img {
-    border-radius: 50%;
-    margin-right: 15px;
-}
-
-.similar-maps {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    padding: 30px;
-    width: 100%;
-    background: white;
-    border-radius: 25px;
-    box-sizing: border-box;
-    box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.1);
-}
-
-.similar-maps .flex {
-    display: flex;
-    justify-content: space-between;
-}
-
-.similar-maps .title {
-    font-family: 'Luckiest Guy', cursive;
-    transform: skew(-10deg);
-    font-weight: 500;
-}
-
-.map-item img{
-    border-radius: 10px;
-    box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.1);
-}
-
-.map-info {
-    width: 90%;
-    padding: 10px;
-    background: #202020;
-    border-radius: 10px;
-    text-align: center;
-    margin-left: 7px;
-    margin-top: -30px;
-}
-
-.map-title {
-    margin-top: 5px;
-    opacity: 0.9;
-}
-
-@media (min-width: 365px) and (max-width: 991px) {
-    
-    #map .flex {
+    .maps {
+        margin-top: 10px;
         flex-direction: column;
     }
 
-    .images {
-        margin-bottom: 10px;
-    }
-
-    .main-img img {
+    .images, .info {
         width: 100%;
     }
 
-    .info-panel {
-        width: 100%;
-        box-sizing: border-box;
-    }
+}
 
-    .info-panel .title {
-        font-size: 60px;
-    }
+@media (min-width: 768px) and (max-width: 1199px) {
 
-    .info-panel h5 {
-        margin-bottom: 20px;
-    }
-
-    .info-panel .type-btn {
-        padding: 15px 30px 15px 30px;
-        border-radius: 50px;
-    }
-
-    .code-btn {
-        font-size: 60px;
-    }
-
-    .header h1 {
-        font-size: 48px;
-    }
-
-    .similar-maps .title {
-        font-size: 60px;
-        margin-bottom: 10px;
-    }
-
-    .similar-maps .flex {
+    .maps {
+        margin-top: 10px;
         flex-direction: column;
     }
 
-    .map-item img {
+    .images, .info {
         width: 100%;
     }
-    
-    .similar-maps h1 {
-        font-size: 60px;
-    }
+
 }
 
 @media (min-width: 1200px) {
 
+    .maps {
+        margin-top: 30px;
+        justify-content: space-between;
+    }
+
     .images {
-        width: 69%;
+        width: 70%;
     }
     
-    .map-item {
-        width: 350px;
-    }
-
     .info {
-        width: 30%;
+        width: 29%;
     }
-
+    
 }

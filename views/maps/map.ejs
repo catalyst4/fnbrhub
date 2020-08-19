@@ -8,78 +8,74 @@
 <body>
     <%- include('../maps/partials/header') %>
 
-    <section id="map">
-        <div class="container">
-            <div class="flex">
-                <div class="images">
-                    <div class="main-img">
+    <div class="container">
+        <div class="maps">
+            <div class="images">
+                <div class="swiper-container gallery-top">
+                    <div class="swiper-wrapper">
                         <% if(map.youtubeLink) { %>
-                            <div class="yt-container">
-                                <iframe class="video" style="border-radius: 10px;" src="https://www.youtube.com/embed/<%= map.youtubeLink %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                        <% } else { %>
-                            <img src="https://assets.fnbrhub.com/<%= map.image1 %>">
+                            <iframe class="swiper-slide" src="https://www.youtube.com/embed/<%= map.youtubeLink %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         <% } %>
-                    </div>
-                    <div class="sub-imgs"> 
+                        <% if(map.image1) { %>
+                            <img class="swiper-slide" src="https:/assets.fnbrhub.com/<%= map.image1 %>">
+                        <% } %>
                         <% if(map.image2) { %>
-                            <img src="https://assets.fnbrhub.com/<%= map.image2 %>" width="200">
+                            <img class="swiper-slide" src="https:/assets.fnbrhub.com/<%= map.image2 %>">
                         <% } %>
                         <% if(map.image3) { %>
-                            <img src="https://assets.fnbrhub.com/<%= map.image3 %>" width="200">
-                        <% } %>
-                        <% if(map.image4) { %>
-                            <img src="https://assets.fnbrhub.com/<%= map.image4 %>" width="200">
+                            <img class="swiper-slide" src="https:/assets.fnbrhub.com/<%= map.image3 %>">
                         <% } %>
                     </div>
-                    
                 </div>
-                <div class="info">
-                    <div class="info-panel">
-                        <h1 class="title"><%= map.name %></h1>
-                        <h5>By <%= map.creator %></h5>
-                        <a class="type-btn primary"><%= map.type %></a>
-                        <p class="description"><%= map.description %></p>
-                        <input class="code-btn primary" id="code-btn" value="<%= map.code %>" onclick="copy()"></input>
-                    </div>
-                    <div class="creator-panel">
-                        <div class="header">
-                            <img src="/assets/img/user_Shride.jpg" width="50">
-                            <h1><%= map.creator %></h1>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, magni!</p>
+                <div class="swiper-container gallery-thumbs">
+                    <div class="swiper-wrapper">
+                        <% if(map.youtubeLink) { %>
+                            <img class="swiper-slide" src="https://i.ytimg.com/vi/<%= map.youtubeLink %>/sddefault.jpg">
+                        <% } %>
+                        <% if(map.image1) { %>
+                            <img class="swiper-slide" src="https:/assets.fnbrhub.com/<%= map.image1 %>">
+                        <% } %>
+                        <% if(map.image2) { %>
+                            <img class="swiper-slide" src="https:/assets.fnbrhub.com/<%= map.image2 %>">
+                        <% } %>
+                        <% if(map.image3) { %>
+                            <img class="swiper-slide" src="https:/assets.fnbrhub.com/<%= map.image3 %>">
+                        <% } %>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="similar">
-        <div class="container">
-            <div class="similar-maps">
-                <h1 class="title">Similar Maps</h1>
-                <div class="flex">
-                    <div class="map-item">
-                        <img src="/images/4692-4928-5967.jpg" width="350">
-                        <h1 class="map-title">Similar Map</h1>
-                    </div>
-                    <div class="map-item">
-                        <img src="/images/4692-4928-5967.jpg" width="350">
-                        <h1 class="map-title">Similar Map</h1>
-                    </div>
-                    <div class="map-item">
-                        <img src="/images/4692-4928-5967.jpg" width="350">
-                        <h1 class="map-title">Similar Map</h1>
-                    </div>
-                    <div class="map-item">
-                        <img src="/images/4692-4928-5967.jpg" width="350">
-                        <h1 class="map-title">Similar Map</h1>
-                    </div>
+            <div class="info">
+                <div class="map-info">
+                    <h1><%= map.name %></h1>
+                    <h5>By <%= map.creator %></h5>
+                    <a class="type-btn" href="/maps/<%= map.type %>"><%= map.type %></a>
+                    <p><%= map.description %></p>
+                    <input class="code-btn" id="code-btn" value="<%= map.code %>" onclick="copy()">
                 </div>
             </div>
         </div>
-    </section>
+        
+    </div>
 
 </body>
 </html>
 <script src="/assets/js/copy.js"></script>
+<script>
+    var galleryThumbs = new Swiper('.gallery-thumbs', {
+      spaceBetween: 10,
+      slidesPerView: 4,
+      freeMode: true,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+    });
+    var galleryTop = new Swiper('.gallery-top', {
+      spaceBetween: 10,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      thumbs: {
+        swiper: galleryThumbs
+      }
+    });
+</script>
