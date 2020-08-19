@@ -35,18 +35,15 @@ body {
 }
 
 .gallery-top {
-    box-sizing: border-box;
     width: 100%;
 }
 
 .iframe-container {
     width: 100%;
-    box-sizing: border-box;
     position: absolute;
 }
 
 .gallery-thumbs {
-    box-sizing: border-box;
     padding: 10px 0;
 }
 
