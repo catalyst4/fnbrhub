@@ -17,13 +17,13 @@
                             <iframe class="swiper-slide" src="https://www.youtube.com/embed/<%= map.youtubeLink %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         <% } %>
                         <% if(map.image1) { %>
-                            <img class="swiper-slide" src="https:/assets.fnbrhub.com/<%= map.image1 %>">
+                            <img class="swiper-slide lazy" src="https:/assets.fnbrhub.com/<%= map.image1 %>" data-src="https:/assets.fnbrhub.com/<%= map.image1 %>">
                         <% } %>
                         <% if(map.image2) { %>
-                            <img class="swiper-slide" src="https:/assets.fnbrhub.com/<%= map.image2 %>">
+                            <img class="swiper-slide lazy" src="https:/assets.fnbrhub.com/<%= map.image2 %>" data-src="https:/assets.fnbrhub.com/<%= map.image2 %>">
                         <% } %>
                         <% if(map.image3) { %>
-                            <img class="swiper-slide" src="https:/assets.fnbrhub.com/<%= map.image3 %>">
+                            <img class="swiper-slide lazy" src="https:/assets.fnbrhub.com/<%= map.image3 %>" data-src="https:/assets.fnbrhub.com/<%= map.image3 %>">
                         <% } %>
                     </div>
                 </div>
@@ -33,13 +33,13 @@
                             <img class="swiper-slide" src="https://i.ytimg.com/vi/<%= map.youtubeLink %>/sddefault.jpg">
                         <% } %>
                         <% if(map.image1) { %>
-                            <img class="swiper-slide" src="https:/assets.fnbrhub.com/<%= map.image1 %>">
+                            <img class="swiper-slide lazy" src="https:/assets.fnbrhub.com/<%= map.image1 %>" data-src="https:/assets.fnbrhub.com/<%= map.image1 %>">
                         <% } %>
                         <% if(map.image2) { %>
-                            <img class="swiper-slide" src="https:/assets.fnbrhub.com/<%= map.image2 %>">
+                            <img class="swiper-slide lazy" src="https:/assets.fnbrhub.com/<%= map.image2 %>" data-src="https:/assets.fnbrhub.com/<%= map.image2 %>">
                         <% } %>
                         <% if(map.image3) { %>
-                            <img class="swiper-slide" src="https:/assets.fnbrhub.com/<%= map.image3 %>">
+                            <img class="swiper-slide lazy" src="https:/assets.fnbrhub.com/<%= map.image3 %>" data-src="https:/assets.fnbrhub.com/<%= map.image3 %>">
                         <% } %>
                     </div>
                 </div>
@@ -59,6 +59,8 @@
 
 </body>
 </html>
+<script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js"></script>
+<script> lazyload(); </script>
 <script src="/assets/js/copy.js"></script>
 <script>
     var galleryThumbs = new Swiper('.gallery-thumbs', {
