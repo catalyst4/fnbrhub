@@ -9,6 +9,7 @@
             </div>
             <div class="nav-links">
                 <a href="/" id="home" class="nav-link"><i class="fas fa-home"></i> Home</a>
+                <a href="/news" id="news" class="nav-link"><i class="fas fa-newspaper"></i> News</a>
                 <a href="/maps/newest" id="newest" class="nav-link"><i class="fas fa-leaf"></i> Newest</a>
                 <a href="/maps/random" id="random" class="nav-link"><i class="fas fa-random"></i> Random</a>
             </div>
@@ -91,6 +92,7 @@
 
 <div id="mobile-nav" class="mobile-nav">
     <a href="/">Home</a>
+    <a href="/news">News</a>
     <a href="/maps/newest">Newest</a>
     <a href="/maps/random">Random</a>
 </div>
@@ -130,6 +132,7 @@
 <script>
     $(document).ready(function() {
         const home = document.getElementById('home');
+        const news = document.getElementById('news');
         const newest = document.getElementById('newest');
         const popular = document.getElementById('popular');
         const featured = document.getElementById('featured');
@@ -159,7 +162,9 @@
         const snd = document.getElementById('snd');
 
         const url = window.location.href;
-        if(url.includes('/maps/newest')) {
+        if(url.includes('/news')) {
+            news.classList.add('active');
+        } else if(url.includes('/maps/newest')) {
             newest.classList.add('active');
         } else if(url.includes('/maps/popular')) {
             popular.classList.add('active');

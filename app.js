@@ -41,6 +41,7 @@ app.get('/maps', (req,res) => {
 })
 
 app.use(require('./routes/index'));
+app.use(require('./routes/news'));
 app.use(require('./routes/maps/submit'));
 app.use(require('./routes/maps/type'));
 app.use(require('./routes/maps/map'));

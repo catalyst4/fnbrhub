@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../maps/partials/head') %>
+    <title>News | FNBR HUB</title>
+    <link rel="stylesheet" href="/assets/css/news.css">
+</head>
+<body>
+    <%- include('../maps/partials/header') %>
+    
+    <div class="container">
+        <div class="news">
+            <div class="flex">
+                <div class="news-item">
+                    <img src="<%= newsItems[0].image %>">
+                    <div class="news-content">
+                        <h1><%= newsItems[0].title %></h1>
+                        <p><%= newsItems[0].body %></p>    
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="<%= newsItems[1].image %>">
+                    <div class="news-content">
+                        <h1><%= newsItems[1].title %></h1>
+                        <p><%= newsItems[1].body %></p>     
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </div>
+</body>
+</html>

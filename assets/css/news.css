@@ -1,0 +1,59 @@
+body {
+    background: white;
+    color: black;
+}
+
+.news {
+    margin-top: 50px;
+}
+
+.news .flex {
+    display: flex;
+}
+
+.news-item {
+    background: rgb(255, 255, 255);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.1);
+}
+
+.news-item img {
+    width: 100%;
+}
+
+.news-content {
+    padding: 10px 35px 35px 35px;
+}
+
+.news h1 {
+    font-family: 'Luckiest Guy', cursive;
+    transform: skew(-10deg);
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+@media (min-width: 375px) and (max-width: 991px) {
+
+    .news .flex {
+        flex-direction: column;
+    }
+
+    .news-item {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+}
+
+@media (min-width: 991px) {
+
+    .news .flex {
+        justify-content: space-between;
+    }
+
+    .news-item {
+        width: 49%;
+    }
+
+}
