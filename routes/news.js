@@ -10,21 +10,17 @@ router.get('/news', async (req,res) => {
 
         const api = await axios.get(url);
 
-        const newsMotds = api.data.battleroyalenews.news.platform_motds;
+        const brNews = api.data.battleroyalenewsv2.news.motds;
+        const brNewsList = []
+        brNews.forEach(news => {
+            brNewsList.push({
+                image: news.image,
+                title: news.title,
+                body: news.body
+            })
+        });
 
-        const newsItems = [];
-
-        for(news of newsMotds) {
-            if(news.platform == 'windows') {
-                newsItems.push({
-                    image: news.message.image,
-                    title: news.message.title,
-                    body: news.message.body
-                });
-            }
-        }
-
-        return res.render('maps/news', { newsItems });
+        return res.render('maps/news', { brNewsList });
 
     } catch(e) {
         console.log(e);

@@ -3,11 +3,11 @@ body {
     color: black;
 }
 
-.news {
+.br-news {
     margin-top: 50px;
 }
 
-.news .flex {
+.br-news .flex, .stw-news .flex{
     display: flex;
 }
 
@@ -26,7 +26,7 @@ body {
     padding: 10px 35px 35px 35px;
 }
 
-.news h1 {
+.br-news h1, .stw-news h1 {
     font-family: 'Luckiest Guy', cursive;
     transform: skew(-10deg);
     font-weight: 500;
@@ -35,7 +35,7 @@ body {
 
 @media (min-width: 375px) and (max-width: 991px) {
 
-    .news .flex {
+    .br-news .flex, .stw-news .flex {
         flex-direction: column;
     }
 
@@ -48,12 +48,21 @@ body {
 
 @media (min-width: 991px) {
 
-    .news .flex {
+    .br-news .flex, .stw-news .flex {
         justify-content: space-between;
     }
 
-    .news-item {
+    .br-news .news-item {
         width: 49%;
+    }
+
+    .stw-news {
+        margin-top: 25px;
+        margin-bottom: 50px;
+    }
+
+    .stw-news .news-item {
+        width: 32%;
     }
 
 }
